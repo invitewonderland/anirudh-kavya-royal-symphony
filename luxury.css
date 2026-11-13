@@ -1,0 +1,176 @@
+/* Celestial atelier — light, engraved metal and deliberate moments of wonder. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:20px;top:-70px;z-index:500;background:var(--pearl);color:var(--deep);padding:15px 22px}
+.skip-link:focus{top:15px}
+:focus-visible{outline:2px solid #c79e59;outline-offset:6px}
+button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}
+#celestialAtmosphere{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:85;contain:strict}
+.locked #celestialAtmosphere{z-index:310}
+#revealAurora{position:fixed;inset:0;z-index:84;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 75%,#edca8845,transparent 65%),linear-gradient(115deg,transparent 20%,#f9d99b22 40%,#fff3ce30 50%,transparent 72%)}
+#revealAurora.releasing{animation:auroraRelease 3.8s ease-out both}
+@keyframes auroraRelease{0%{opacity:0;transform:translateY(20%) scale(.9)}22%{opacity:1}100%{opacity:0;transform:translateY(-25%) scale(1.25)}}
+.film-grain{opacity:.045}
+.section:after{pointer-events:none}
+.section-pad{isolation:isolate}
+.section-pad>.celestial-map,.section-pad>.date-stars,.section-pad>.blessings-stars{position:absolute}
+.reveal{transition:opacity 1.25s ease,transform 1.4s cubic-bezier(.16,1,.3,1);transition-delay:var(--reveal-delay,0ms)}
+.section.in-scene .eyebrow{animation:eyebrowLight 1.8s ease both}
+@keyframes eyebrowLight{from{letter-spacing:.45em;opacity:.25}to{opacity:1}}
+.hero-copy{isolation:isolate}
+.hero-title{filter:drop-shadow(0 4px 25px #091d25a0)}
+.entered .hero-title span{animation:heroName 2.5s cubic-bezier(.16,1,.3,1) both}
+.entered .hero-title span:last-child{animation-delay:.25s}
+.entered .hero-title em{animation:heroName 2.5s .12s both}
+@keyframes heroName{from{opacity:0;transform:translateY(28px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+.hero-img{transform:translateY(var(--scene-shift,0px)) scale(1.07)}
+.hero-orbit{border-color:#e9c98b38}
+.hero-orbit:after{content:'✧';position:absolute;top:-13px;left:50%;color:#f3d59b;font-size:22px;text-shadow:0 0 18px #f1ce92}
+.hero-orbit.orbit-two:after{top:auto;bottom:-9px;font-size:16px;opacity:.7}
+.hero-divider{position:relative;display:flex;align-items:center;justify-content:center;gap:20px}
+.hero-divider:before,.hero-divider:after{content:'';height:1px;width:70px;background:linear-gradient(90deg,transparent,#dbb77b88)}
+.hero-divider:after{transform:rotate(180deg)}
+.hero-copy .hero-tagline{color:#f7e6c6}
+.prologue .gold-sun{position:relative}
+.prologue .gold-sun:before{content:'';position:absolute;inset:-12px;border:1px solid #d3b27a50;border-radius:50%}
+.small-rule{width:110px;background:linear-gradient(90deg,#bc965b,transparent)}
+.portrait-card img,.soul-card img{transition:transform 1.6s cubic-bezier(.2,.65,.2,1),filter 1s}
+.portrait-card{isolation:isolate}
+.portrait-card:before{content:'';position:absolute;inset:12px 12px 50px;border:1px solid #fce9c565;z-index:1;pointer-events:none;transition:inset .7s}
+.portrait-card--second:before{inset:12px 12px 50px}
+.soul-card{border:1px solid #d5bc8c90}
+.portrait-open{position:absolute;bottom:64px;right:22px;z-index:5;border:1px solid #f8dfac80;border-radius:50%;background:#102b35a6;color:#fff0d1;width:42px;height:42px;display:grid;place-items:center;font:24px var(--serif);backdrop-filter:blur(8px);transition:background .3s,transform .4s}
+.soul-card .portrait-open{top:18px;bottom:auto;right:18px}
+@media(hover:hover){.portrait-card:hover img,.soul-card:hover img{transform:scale(1.035);filter:saturate(1.05)}.portrait-open:hover{background:#b88d48;transform:rotate(90deg)}}
+/* The secret: an engraved celestial reliquary, opening into light. */
+.date-chapter{padding-bottom:110px;background:radial-gradient(ellipse at 50% 38%,#1b5556 0,#0b343c 35%,#061d2a 80%)}
+.date-chapter:before{opacity:.35}
+.date-chapter>.celestial-map{width:100%;height:100%;inset:0;color:#d9b77a;opacity:.14;pointer-events:none;z-index:-1}
+.date-chapter .display-title{margin-top:22px}
+.scratch-frame{position:relative;padding:22px;background:linear-gradient(135deg,#b6915333,#071f2ac7 35%,#e8c48225);border-color:#dcc18caa;box-shadow:0 0 0 7px #dbbd7e09,0 0 0 8px #dbbd7e28,0 35px 80px #010e1980;transition:box-shadow 1.5s,border-color 1.5s}
+.scratch-frame:before,.scratch-frame:after{content:'';position:absolute;width:36px;height:36px;pointer-events:none;border-color:#fff1c5;opacity:.85}
+.scratch-frame:before{top:-5px;left:-5px;border-top:2px solid;border-left:2px solid}
+.scratch-frame:after{bottom:-5px;right:-5px;border-bottom:2px solid;border-right:2px solid}
+.frame-jewel{position:absolute;top:-16px;left:calc(50% - 16px);width:32px;background:#113b42;color:#f8dfaa;font-size:25px;z-index:5;text-shadow:0 0 20px #e7c58f88}
+.scratch-inner{background:radial-gradient(ellipse,#305559,#102e38 70%);min-height:285px}
+.scratch-inner:before{font-size:240px;left:50%;top:50%;transform:translate(-50%,-50%);color:#ead5ab0b}
+.scratch-reveal{border:1px solid #d9b77a4d;inset:10px}
+.scratch-mini{margin-bottom:15px;font-size:8px;letter-spacing:.3em}
+.scratch-day{font-size:132px;text-shadow:0 0 45px #ffe3a82e}
+.scratch-month{font-size:30px}
+.scratch-weekday{margin:16px 0}
+.scratch-inner canvas{transition:opacity 1.6s,filter 1.6s;filter:brightness(1)}
+.scratch-inner.revealed canvas{filter:brightness(1.8);opacity:0}
+.scratch-inner.revealed .scratch-reveal{animation:dateEmergence 1.8s cubic-bezier(.16,1,.3,1) both}
+.scratch-frame.is-unveiled{border-color:#fff1bf;box-shadow:0 0 0 8px #e3c48b15,0 0 65px #e6c78730,0 35px 80px #010e1980}
+.scratch-overlay-label .scratch-glyph{font-size:55px}
+.scratch-overlay-label strong{font-size:10px;letter-spacing:.28em}
+.scratch-overlay-label small{margin-top:10px;font-size:23px}
+.scratch-frame-caption{margin-top:20px;font-size:8px;letter-spacing:.23em}
+@keyframes dateEmergence{from{opacity:.15;transform:scale(.93);filter:blur(5px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+.date-chapter .demo-subtle{margin-bottom:64px;color:#adbfba;font-size:9px}
+/* Four miniature astronomical instruments. All geometry is local SVG. */
+.celestial-clock{max-width:1060px;margin:0 auto;padding:52px 30px 35px;isolation:isolate;position:relative;border-top:1px solid #d4b67945;border-bottom:1px solid #d4b67945;background:radial-gradient(ellipse at 50% 55%,#c9ba7a0b,transparent 70%)}
+.celestial-clock:before,.celestial-clock:after{content:'';position:absolute;pointer-events:none;inset:12px 0;border-left:1px solid #d4b67922;border-right:1px solid #d4b67922;z-index:-1}
+.celestial-clock:after{inset:0 14px;border-left-color:#d4b67912;border-right-color:#d4b67912}
+.clock-crown{position:absolute;top:-17px;left:50%;transform:translateX(-50%);color:#f3d59e;background:#0c303a;display:flex;align-items:center;gap:15px;font-size:25px;padding:0 20px}
+.clock-crown span{width:4px;height:4px;background:var(--gold);transform:rotate(45deg)}
+.celestial-clock>.eyebrow{font-size:9px;letter-spacing:.35em;margin:0 0 12px}
+.celestial-clock h3{font:300 clamp(30px,3.5vw,48px)/1.1 var(--serif);margin:0 auto 38px;color:#fbf2e1;letter-spacing:-.025em}
+.celestial-clock h3 em{font-weight:300;color:#e9d19f}
+.celestial-clock .countdown{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,2.6vw,34px);max-width:910px;margin:0 auto}
+.countdown .clock-unit{min-width:0;position:relative;display:flex;flex-direction:column;align-items:center}
+.countdown .clock-dial{min-width:0;position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;background:radial-gradient(circle,#e9d4a10b 0,transparent 60%);border-radius:50%;isolation:isolate}
+.clock-dial svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;transform:rotate(-90deg)}
+.dial-rim{stroke:#d3b88365;stroke-width:.6}
+.dial-ticks{stroke:#ddc49375;stroke-width:3;stroke-dasharray:.7 8.2}
+.dial-track{stroke:#c9b28326;stroke-width:.8}
+.dial-progress{stroke:#f5dca6;stroke-width:1.3;stroke-dasharray:100;stroke-dashoffset:var(--dial-offset,0);transition:stroke-dashoffset .8s ease;filter:drop-shadow(0 0 3px #f3ce95a0);stroke-linecap:round}
+.countdown .dial-satellite{position:absolute;inset:3%;min-width:0;transform:rotate(var(--satellite-angle,0deg));transition:transform .85s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.dial-satellite b{position:absolute;left:50%;top:-8px;transform:translateX(-50%);font:16px var(--serif);color:#ffe9b5;text-shadow:0 0 13px #f4cd7baa}
+.countdown .clock-dial strong{font:300 clamp(48px,6.6vw,88px)/1 var(--serif);letter-spacing:-.06em;color:#fff5df;text-shadow:0 0 32px #e5cf9e25;font-variant-numeric:tabular-nums;position:relative;z-index:1;padding-right:4px}
+.countdown .unit-label{font:500 9px var(--sans);letter-spacing:.28em;color:#f1d69b;margin:19px 0 8px}
+.countdown .unit-poetry{font:italic 17px var(--serif);letter-spacing:0;color:#b5c4bc}
+.countdown .dial-echo{position:absolute;inset:14%;margin:0;border:1px solid #f3d9a7;border-radius:50%;pointer-events:none;opacity:0}
+.clock-heartline{display:flex;align-items:center;justify-content:center;gap:18px;margin:32px auto 15px;max-width:330px;color:#d8bc85}
+.clock-heartline span{height:1px;flex:1;background:linear-gradient(90deg,transparent,#d1b37b88)}
+.clock-heartline span:last-child{transform:rotate(180deg)}
+.clock-heartline b{font-size:19px;font-weight:400}
+.clock-whisper{font:italic 20px/1.4 var(--serif);margin:0 auto;color:#c5d0c4}
+/* The celebrations are connected by a fine golden thread. */
+.event-list{position:relative}
+.event-card{position:relative;isolation:isolate;transition:background .6s,border-color .6s}
+.event-card:before{content:'';position:absolute;inset:0 -20px;z-index:-1;background:radial-gradient(ellipse at var(--light-x,50%) var(--light-y,50%),#d9b77c26,transparent 65%);opacity:0;transition:opacity .6s;pointer-events:none}
+.event-card:hover:before,.event-card:focus-within:before{opacity:1}
+.event-card--featured:after{content:'';position:absolute;top:0;bottom:0;left:-18px;width:2px;background:linear-gradient(transparent,#bb9257,transparent)}
+.event-symbol{transition:transform 1s,color .8s}
+.event-card:hover .event-symbol{transform:rotate(15deg);color:#a5793b}
+.event-number{color:#bfa57b}
+.celebrations:before,.letter-section:before,.rsvp-section:before{content:'';position:absolute;top:0;left:50%;width:1px;height:62px;background:linear-gradient(#b89b65aa,transparent);pointer-events:none}
+/* Resonance travels out of the piano as the guest plays. */
+.piano-panel{position:relative;border-color:#d8c08a8a;box-shadow:0 0 0 7px #f4d49609,0 30px 90px #02111990;transition:box-shadow 1.4s}
+.piano-panel.resonating{box-shadow:0 0 0 7px #f4d49612,0 0 65px #e6c78728,0 30px 90px #02111990}
+.piano-resonance{height:25px;display:flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 -4px;pointer-events:none}
+.piano-resonance span{width:2px;height:3px;background:#e9c78e;transform-origin:center;box-shadow:0 0 8px #f5d69d30}
+.piano-key.white.pressed{background:linear-gradient(#f9edce,#e5c58c);box-shadow:inset 0 -8px 12px #a77a3a44,0 0 15px #f9d89570}
+.piano-key.black.pressed{background:linear-gradient(#6b532f,#bb955a)}
+.pill-button,.wish-button{position:relative;isolation:isolate;overflow:hidden;transition:transform .35s,box-shadow .4s,background .4s}
+.pill-button:before,.wish-button:before{content:'';position:absolute;inset:-100% -30%;background:linear-gradient(110deg,transparent 40%,#fff1c550 49%,transparent 58%);transform:translateX(-110%);pointer-events:none}
+.pill-button:hover:before,.wish-button:hover:before,.pill-button:focus-visible:before{animation:buttonGlissando 1.2s ease both}
+@keyframes buttonGlissando{to{transform:translateX(110%)}}
+.letter-closed{transition:box-shadow 1.2s,background 1.2s}
+.letter-closed.open{box-shadow:0 0 0 8px #d6c09c12,0 28px 80px #7b6b5630;background:radial-gradient(ellipse at 50% 0,#fffdf4,#f0e6d6)}
+.letter-closed.open .letter-text p{animation:letterLine 1.2s ease both;animation-delay:var(--line-delay,0ms)}
+@keyframes letterLine{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.blessings-stars{top:50px;left:0;right:0;opacity:.4;pointer-events:none}
+.blessing-bloom{position:relative;overflow:hidden;border-color:#d8b87e66;background:linear-gradient(145deg,#e9d5a516,#061c291f);box-shadow:0 12px 35px #02192228}
+.blessing-bloom:before{content:'';position:absolute;width:80px;height:80px;left:calc(50% - 40px);top:5px;border:1px solid #dbc18a26;border-radius:50%}
+.blessing-bloom .bloom-icon{display:inline-block;animation:flowerUnfold 1.8s cubic-bezier(.16,1,.3,1) both}
+@keyframes flowerUnfold{from{transform:scale(.3) rotate(-70deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+.blessing-form input:focus,.blessing-form textarea:focus{background:#f7e5bc0d;box-shadow:0 0 25px #eed2980c}
+.rsvp-card{position:relative;box-shadow:0 25px 80px #8b765a16}
+.rsvp-card:before{content:'';position:absolute;inset:9px;border:1px solid #d3bb8a50;pointer-events:none}
+.rsvp-choices input:focus-visible+span{outline:2px solid #b88a49;outline-offset:4px}
+.rsvp-result{animation:dateEmergence 1s ease both}
+.finale-photo{transform:translateY(var(--scene-shift,0px)) scale(1.06)}
+.finale-monogram{width:135px;height:135px;display:flex;align-items:center;justify-content:center;border:1px solid #d5b77b66;border-radius:50%;position:relative}
+.finale-monogram:after{content:'';position:absolute;inset:7px;border:1px dashed #dfc7954a;border-radius:50%}
+.finale .finale-monogram span{margin:0 6px}
+.wish-button{border-radius:2px}
+.site-footer{position:relative}
+.site-footer:before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,#d7b9767a,transparent)}
+.chapter-rail{position:fixed;z-index:115;right:19px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:7px;opacity:0;transition:opacity .7s}
+.entered .chapter-rail{opacity:1}
+.chapter-rail:before{content:'';position:absolute;left:50%;top:16px;bottom:16px;width:1px;background:#cdb58135;z-index:-1}
+.chapter-rail a{width:27px;height:27px;display:grid;place-items:center;position:relative}
+.chapter-rail a:before{content:'';width:4px;height:4px;border:1px solid #cbb585;background:#122e35;transform:rotate(45deg);transition:transform .5s,background .5s,box-shadow .5s}
+.chapter-rail a[aria-current]:before{transform:rotate(45deg) scale(1.7);background:#f6deaa;box-shadow:0 0 14px #d9b77ba0}
+.chapter-rail a:after{content:attr(data-title);position:absolute;right:34px;white-space:nowrap;background:#0a2631ef;color:#f3ddb5;font:italic 17px var(--serif);padding:7px 14px;opacity:0;transform:translateX(5px);transition:opacity .3s,transform .3s;pointer-events:none;border:1px solid #c9aa6d55}
+.chapter-rail a:hover:after,.chapter-rail a:focus-visible:after{opacity:1;transform:translateX(0)}
+.portrait-viewer{padding:26px 35px 15px;width:min(94vw,1100px);max-width:none;height:94dvh;max-height:94dvh;border:1px solid #cbb2828a;background:#071d28f7;color:#eee2c9;overflow:hidden;box-shadow:0 0 0 8px #d8ba7b13,0 30px 120px #0008}
+.portrait-viewer::backdrop{background:#020c13ed;backdrop-filter:blur(12px)}
+.portrait-viewer[open]{display:flex;flex-direction:column;animation:dateEmergence .6s ease both}
+.portrait-viewer .eyebrow{text-align:center;color:#e4c58d;margin:4px 45px 18px}
+.viewer-close{position:absolute;right:18px;top:12px;border:0;background:none;color:#eed9ac;width:44px;height:44px;font-size:20px}
+.viewer-stage{min-height:0;flex:1;display:flex;justify-content:center;overflow:hidden}
+.viewer-stage img{width:100%;height:100%;object-fit:contain}
+.viewer-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:65px}
+.viewer-controls button{width:44px;height:44px;flex-shrink:0;border:1px solid #cfaf7360;background:none;color:#f4dab0;font:24px var(--serif)}
+.viewer-controls p{font:italic 20px/1.2 var(--serif);text-align:center;margin:12px 0}
+body.viewing-portrait{overflow:hidden}
+body:not(.entered) .chapter-rail,body:not(.entered) .site-header{visibility:hidden}
+.section:not(.in-scene) .hero-img img,.section:not(.in-scene) .star-drift,.section:not(.in-scene) .scratch-glyph,.section:not(.in-scene) .piano-flower{animation-play-state:paused}
+body.page-hidden *,body.page-hidden *:before,body.page-hidden *:after{animation-play-state:paused!important}
+@media(min-width:1400px){.celestial-clock{margin-left:-30px;margin-right:-30px;max-width:none}.date-chapter{padding-left:max(9vw,calc((100vw - 1120px)/2));padding-right:max(9vw,calc((100vw - 1120px)/2))}}
+@media(max-width:900px){.chapter-rail{display:none}.celestial-clock{padding:44px 18px 30px}.countdown .unit-poetry{font-size:14px}.finale-monogram{width:100px;height:100px}}
+@media(max-width:600px){
+ .date-chapter{padding:95px 22px 80px}.date-chapter .date-intro{max-width:330px;font-size:22px;margin-bottom:44px}.date-chapter .display-title{font-size:66px}
+ .scratch-frame{padding:14px;width:100%;max-width:420px}.scratch-inner{min-height:270px;aspect-ratio:1.12}.scratch-mini{font-size:7px;letter-spacing:.2em;margin-bottom:12px}.scratch-day{font-size:113px}.scratch-month{font-size:26px}.scratch-weekday{font-size:7px;letter-spacing:.12em}.scratch-frame-caption{font-size:7px;letter-spacing:.14em;margin-top:16px}
+ .date-chapter .demo-subtle{font-size:8px;margin-bottom:54px}.celestial-clock{padding:40px 17px 28px}.celestial-clock h3{font-size:33px;max-width:230px;margin-bottom:28px}.celestial-clock>.eyebrow{font-size:8px;letter-spacing:.25em}
+ .celestial-clock .countdown{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 23px;max-width:350px}.countdown .clock-dial strong{font-size:clamp(48px,13.8vw,75px)}.countdown .unit-label{font-size:8px;letter-spacing:.23em;margin:11px 0 6px}.countdown .unit-poetry{font-size:14px}.dial-satellite b{font-size:13px;top:-6px}.clock-heartline{margin-top:27px;max-width:200px}.clock-whisper{font-size:18px;max-width:250px}
+ .portrait-open{width:36px;height:36px;right:10px;bottom:64px;font-size:22px}.portrait-card:before,.portrait-card--second:before{inset:7px 7px 52px}.soul-card .portrait-open{top:10px;right:10px}.event-card--featured:after{left:-10px}.event-card:before{inset:0 -8px}
+ .portrait-viewer{width:calc(100vw - 24px);height:90dvh;max-height:90dvh;padding:20px 12px 10px}.portrait-viewer .eyebrow{font-size:8px;margin:6px 40px 20px}.viewer-controls{gap:9px}.viewer-controls p{font-size:17px}.viewer-close{top:5px;right:4px}.finale .finale-monogram{margin:10px auto 24px;width:92px;height:92px;font-size:30px}.finale .finale-content{padding-top:85px;padding-bottom:30px}.blessings-stars{top:30px}
+}
+@media(max-width:350px){.date-chapter{padding-left:16px;padding-right:16px}.celestial-clock{padding-left:12px;padding-right:12px}.celestial-clock .countdown{gap:23px 14px}.countdown .unit-poetry{font-size:12px}.scratch-month{font-size:23px}}
+@media(prefers-reduced-motion:reduce){
+ #celestialAtmosphere,#revealAurora{display:none}.hero-img,.finale-photo{transform:none}.hero-title span,.hero-title em{filter:none!important}.dial-progress,.dial-satellite{transition:none!important}.section.in-scene .eyebrow{letter-spacing:.25em}.portrait-viewer[open],.scratch-inner.revealed .scratch-reveal{filter:none}.reveal{transition-delay:0ms!important}
+}
