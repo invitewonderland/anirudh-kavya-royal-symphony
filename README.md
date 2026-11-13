@@ -33,7 +33,7 @@ Open `index.html` in a browser. For best results, serve it over HTTP or HTTPS: o
 ## The enchanted royal world
 
 - **Celebrations theatre:** a full cinematic stage with three original environments, keyboard-accessible act tabs, and unfolding personal invitations. The sunset welcome releases lanterns, the wedding releases rose petals, and the moonlit ball releases shooting stars. Essentials stay visible before opening; the invitation adds the full date, time and venue. Close with the return button or Escape. Effects are bounded, cleared between acts, and omitted for reduced motion.
-- **The book of us:** three guest-selected story pages, each pairing its own portrait, words and signature. The surrounding editorial layout reads as illuminated paper and an arched portrait.
+- **The book of us:** three guest-selected story pages, each pairing its own portrait, words and signature. The surrounding editorial layout reads as illuminated paper and a rectangular portrait shown at its full aspect ratio.
 - **Two stars, one destiny:** bring the prologue's stars together to draw their shared constellation. Each bride/groom portrait offers a private romantic promise to uncover.
 - **A guest-written symphony:** piano notes leave a small musical trace on a visual staff, capped at twelve notes.
 - **A private correspondence:** the wax seal opens a dimensional envelope into its letter.
