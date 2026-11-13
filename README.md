@@ -6,7 +6,7 @@ A polished, responsive, **working interactive wedding-invitation concept**, crea
 
 Live invitation: https://invitewonderland.github.io/anirudh-kavya-royal-symphony/
 
-Open `index.html` in a browser. For best results, serve it over HTTP or HTTPS: open the extracted folder in VS Code, use Live Server, or deploy the folder to GitHub Pages. Keep `index.html`, `styles.css`, `luxury.css`, `script.js`, `luxury.js`, and `assets/` together. **Do not upload only the HTML file**; the site needs both stylesheets, both scripts, 8 photographs, and theme music.
+Open `index.html` in a browser. For best results, serve it over HTTP or HTTPS: open the extracted folder in VS Code, use Live Server, or deploy the folder to GitHub Pages. Keep `index.html`, all three CSS files, all three JavaScript files, and `assets/` together. **Do not upload only the HTML file**; the site needs its styles, scripts, portraits, celebration scenery, and theme music.
 
 ## Publish to GitHub Pages
 
@@ -29,6 +29,19 @@ Open `index.html` in a browser. For best results, serve it over HTTP or HTTPS: o
 - **RSVP:** prepare a personalised response, copy it, or open a WhatsApp share screen. **No RSVP is sent or recorded automatically** because no couple recipient or backend has been configured.
 - **Wish finale:** release a shower of stars; “Replay the magic” returns to the opening curtain.
 - **Cinematic tour:** a sequenced scroll through the key chapters that can help produce an Instagram Reel screen recording.
+
+## The enchanted royal world
+
+- **Celebrations theatre:** a full cinematic stage with three original environments, keyboard-accessible act tabs, and unfolding personal invitations. The sunset welcome releases lanterns, the wedding releases rose petals, and the moonlit ball releases shooting stars. Essentials stay visible before opening; the invitation adds the full date, time and venue. Close with the return button or Escape. Effects are bounded, cleared between acts, and omitted for reduced motion.
+- **The book of us:** three guest-selected story pages, each pairing its own portrait, words and signature. The surrounding editorial layout reads as illuminated paper and an arched portrait.
+- **Two stars, one destiny:** bring the prologue's stars together to draw their shared constellation. Each bride/groom portrait offers a private romantic promise to uncover.
+- **A guest-written symphony:** piano notes leave a small musical trace on a visual staff, capped at twelve notes.
+- **A private correspondence:** the wax seal opens a dimensional envelope into its letter.
+- **The wish orchard:** each locally saved blessing becomes a glowing flower on the golden tree. Select a flower to read its exact words. The same six-message browser storage limit applies; no shared guestbook is implied.
+- **A seat in forever:** the RSVP becomes a personal admission pass bearing the guest's name. Its completion state says the reply is prepared, never that it was delivered. Editing the form hides the previous prepared response until it is prepared again.
+- **A wish into forever:** releasing a wish draws a lasting heart constellation into the finale sky.
+
+`royal-world.css` and `royal-world.js` own these experiences. Original scenery and generation prompts are documented in `assets/scenes/ARTWORK.md`.
 
 ## Demo details — replace before presenting as a real event
 
@@ -58,7 +71,7 @@ This is explicitly a **fictional concept invitation**, not a real wedding announ
 7. `07-symphony-of-us.webp` — Santorini Twilight Wedding Dance
 8. `08-into-forever.webp` — Sunset Romance Over the Aegean
 
-`*-thumb.webp` variants are provided for future enhancements or a gallery view. WebP images are optimised for the web; the eight main portraits total approximately 2.3 MB, plus a ~1 MB music file.
+`*-thumb.webp` variants are provided for future enhancements or a gallery view. WebP images are optimised for the web; the eight main portraits total approximately 2.3 MB, plus the ~4 MB user-supplied music file. Celebration scenes use native responsive image selection: approximately 313 KB for all three smaller assets or 1 MB for all three full assets, loaded lazily.
 
 ## Music
 
@@ -74,7 +87,7 @@ The shared atmosphere canvas caps pixel density, pixel count, particle count and
 
 ### Local verification
 
-Run `node --check script.js`, `node --check luxury.js`, and `node tests/interactions.cjs`. The dependency-free, non-rendering integration harness loads the real HTML and scripts with browser APIs stubbed. It covers countdown boundaries, scratch threshold and button reveal, opening with blocked audio, the letter, menu focus, portrait navigation, blessing storage and text escaping, RSVP preparation, wish cooldown and reduced motion. It does not render CSS or measure real device performance; desktop/mobile visual inspection remains a separate check.
+Run `node --check script.js`, `node --check luxury.js`, `node --check royal-world.js`, and `node tests/interactions.cjs`. The dependency-free, non-rendering integration harness loads the real HTML and scripts with browser APIs stubbed. It covers countdown boundaries, scratch threshold and button reveal, opening with blocked audio, the letter, menu focus, portrait navigation, blessing storage and text escaping, RSVP preparation, wish cooldown and reduced motion. It also covers act switching and arrow-key wrapping, invitation focus and Escape, scene particle limits and cleanup, story pages, portrait promises, wish-tree selection, the bounded musical score and stale RSVP invalidation. It does not render CSS or measure real device performance; desktop/mobile visual inspection remains a separate check.
 
 Google Fonts is the only optional external visual dependency; the invitation uses local serif/sans fallbacks if fonts cannot load. Audio, photos, CSS, and JavaScript are bundled locally.
 

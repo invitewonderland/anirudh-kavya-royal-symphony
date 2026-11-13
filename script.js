@@ -366,6 +366,7 @@ function renderBlessings(){
     const who=document.createElement('small');who.textContent='WITH LOVE, '+wish.name.toUpperCase();
     card.append(icon,p,who);garden.appendChild(card);
   }
+  window.RoyalWorld?.growBlessings(blessings);
 }
 renderBlessings();
 $('#blessingForm').addEventListener('submit',e=>{
@@ -419,18 +420,29 @@ $('#tourButton').addEventListener('click',()=>{
   if(touring){stopTour();showToast('Cinematic tour paused');return;}
   touring=true;$('#tourButton').textContent='STOP CINEMATIC TOUR ◼';
   startMusic();
+  setupPianoAudio();
   const stages=[
-    ['home',0],['prologue',4700],['our-story',8800],['the-date',13200],
-    ['celebrations',18200],['symphony',22500],['blessings',29000],['forever',34800]
+    ['home',0],['prologue',4700],['our-story',8800],['the-date',15100],
+    ['celebrations',21000],['symphony',33700],['letter',40200],
+    ['blessings',45600],['rsvp',51300],['forever',56500]
   ];
   for(const [id,delay] of stages){tourTimers.push(setTimeout(()=>{
     if(!touring)return;
     if(id==='the-date')revealScratch(true);
+    if(id==='prologue')$('#joinStars')?.click();
+    if(id==='our-story')$('.story-pages button')?.click();
+    if(id==='celebrations')window.RoyalWorld?.tourAct(0);
+    if(id==='symphony')$('#playMotif').click();
+    if(id==='letter'&&$('#letterText').hidden)$('#letterSeal').click();
+    if(id==='forever')$('#makeWish').click();
     document.getElementById(id).scrollIntoView({behavior:reducedMotion?'instant':'smooth',block:'start'});
   },delay));}
-  tourTimers.push(setTimeout(()=>{stopTour();showToast('And the symphony continues ♡')},42000));
+  [[11200,1],[13300,2]].forEach(([delay,index])=>tourTimers.push(setTimeout(()=>{if(touring)$$('.story-pages button')[index]?.click()},delay)));
+  [[25300,1],[29500,2]].forEach(([delay,index])=>tourTimers.push(setTimeout(()=>{if(touring)window.RoyalWorld?.tourAct(index)},delay)));
+  tourTimers.push(setTimeout(()=>{stopTour();showToast('And the symphony continues ♡')},62500));
 });
 window.addEventListener('wheel',()=>{if(touring)stopTour()},{passive:true});
 window.addEventListener('touchstart',e=>{if(touring&&!(e.target.closest&&e.target.closest('#tourButton')))stopTour()},{passive:true});
+window.addEventListener('pointerdown',e=>{if(touring&&!e.target.closest('#tourButton'))stopTour()},{passive:true});
 
 /* CSS hidden must always win over custom display rules. */

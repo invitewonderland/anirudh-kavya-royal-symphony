@@ -116,6 +116,7 @@
     });
   }
   function note(key,midi){
+    window.RoyalWorld?.resonate(midi);
     if(!key||motionQuery.matches)return;
     const r=key.getBoundingClientRect();
     if(r.top>height||r.bottom<0)return;
@@ -174,7 +175,7 @@
     });
     if(nearest!==activeSection){
       activeSection=nearest;
-      ambient=!!nearest&&['home','prologue','the-date','symphony','blessings','forever'].includes(nearest.id);
+      ambient=!!nearest&&['home','prologue','the-date','celebrations','symphony','blessings','forever'].includes(nearest.id);
       // Unnamed interludes retain the preceding named chapter.
       let chapter=nearest;
       while(chapter&&!chapter.id)chapter=chapter.previousElementSibling;

@@ -1,0 +1,234 @@
+/* A royal world in chapters: theatre, illuminated pages, private letters and a living garden. */
+:root{--vellum:#f6eddd;--aged-gold:#c6a16a;--world-ease:cubic-bezier(.16,1,.3,1)}
+html{scrollbar-color:#af8b55 #0a2630}
+.overture-content .crest{position:relative}
+.overture-content .crest:after{content:'';position:absolute;inset:-16px;border:1px solid #d2b57b44;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.overture-content .gold-rule{max-width:260px;margin:auto}
+.open-seal:after{content:'';position:absolute;inset:-27px;border:1px solid #f2d7a23d;border-radius:50%;transform:scale(.96);transition:transform .7s,opacity .7s}
+.open-seal:hover:after{transform:scale(1.13);opacity:.25}
+.menu-panel{background:linear-gradient(#071e27ee,#071e27fc),url('assets/scenes/moonlight-small.webp') center/cover}
+.menu-panel a{position:relative;padding-right:25px}
+.menu-panel a:after{content:'↗';position:absolute;right:0;opacity:0;transform:translate(-8px,5px);transition:opacity .35s,transform .35s;color:#ddbd85;font-size:20px}
+.menu-panel a:hover:after,.menu-panel a:focus-visible:after{opacity:1;transform:translate(0,0)}
+.hero:after{content:'';position:absolute;inset:22px;border:1px solid #f2dba32b;pointer-events:none}
+.hero-copy{z-index:2}
+.hero-title em{position:relative}
+.hero-lead{color:#f6e4c9}
+.prologue{padding-top:140px;padding-bottom:100px;min-height:850px;isolation:isolate}
+.prologue:before,.prologue:after{display:none}
+.destiny-orbits{position:absolute;width:min(1000px,110vw);height:auto;max-height:95%;inset:50% auto auto 50%;transform:translate(-50%,-50%);fill:none;stroke:#d3b679;stroke-width:.65;opacity:.35;z-index:-1;pointer-events:none}
+.destiny-orbits ellipse{stroke-dasharray:2 7}
+.destiny-orbits circle{fill:#fff0c5;stroke:none;filter:drop-shadow(0 0 7px #eac48b)}
+.destiny-orbits .destiny-heart{stroke-dasharray:1;stroke-dashoffset:1;stroke-width:1.6;transition:stroke-dashoffset 2.8s var(--world-ease);filter:drop-shadow(0 0 5px #eac48b80)}
+.prologue.stars-joined .destiny-heart{stroke-dashoffset:0}
+.prologue.stars-joined .destiny-orbits{opacity:.65;transition:opacity 2s}
+.destiny-button{background:none;border:0;border-bottom:1px solid #d5b78080;color:#e6c894;padding:12px 2px 9px;margin-top:12px;font:italic 23px var(--serif)}
+.destiny-button span{margin-left:10px}
+.destiny-whisper{font:italic 18px var(--serif);color:#bdc7ba;min-height:23px;margin-top:17px}
+.prologue .gold-sun{font-size:23px;margin-top:20px}
+.story-section{padding:60px 4vw;background:linear-gradient(125deg,#f7efdf,#e9dfcd);gap:0;min-height:920px;isolation:isolate}
+.story-photo{min-height:800px;border-radius:48% 48% 0 0;overflow:hidden;border:1px solid #b89b6d80;box-shadow:0 18px 55px #5b482a20}
+.story-photo:after{content:'';position:absolute;inset:13px;border:1px solid #fff1ce80;border-radius:48% 48% 0 0;pointer-events:none}
+.story-copy{padding:50px 6vw;position:relative;background:linear-gradient(90deg,#a48b5b0a,transparent 12%)}
+.story-folio{font:8px var(--sans);letter-spacing:.2em;color:#92764e;width:100%;display:flex;justify-content:space-between;gap:15px;margin:0 0 30px;border-bottom:1px solid #b69b6e60;padding-bottom:16px}
+.story-folio b{font-weight:400;letter-spacing:.13em}
+.story-copy .display-title{font-size:clamp(50px,5.8vw,82px);min-height:3em}
+.story-copy .story-paragraph{min-height:7em}
+.story-copy .signed-line{font-size:34px;min-height:1.4em;margin-top:12px}
+.story-pages{display:flex;width:100%;gap:9px;margin-top:35px;align-items:stretch}
+.story-pages button{flex:1;background:none;border:0;border-top:1px solid #bba47e7d;color:#9b8d73;text-align:left;padding:15px 2px;transition:border-color .4s,color .4s}
+.story-pages button b{display:block;font:italic 24px var(--serif);font-weight:400;margin-bottom:6px}
+.story-pages button span{font:9px/1.5 var(--sans);display:block;max-width:80px;letter-spacing:.03em}
+.story-pages button[aria-pressed=true]{border-top:2px solid #a27d43;color:#32453b}
+.portrait-interlude{background:#f7f0e4}
+.portrait-interlude .editorial-grid{gap:clamp(16px,4vw,60px)}
+.portrait-card.reveal{clip-path:inset(8% 0 8% 0);transform:translateY(50px);transition:clip-path 1.7s var(--world-ease),transform 1.7s var(--world-ease),opacity 1.4s}
+.portrait-card.reveal.is-visible{clip-path:inset(0);transform:translateY(0)}
+.portrait-card img{padding:9px;border:1px solid #bba07980;background:#ede2ce;box-shadow:0 30px 55px #3a3f2d26}
+.portrait-card figcaption{padding:0 10px}
+.two-souls{padding-top:120px;background:radial-gradient(ellipse at center,#f9f1df,#dfd9cc)}
+.soul-card{border-radius:46% 46% 0 0;box-shadow:0 25px 60px #3b4c3c30;isolation:isolate}
+.soul-card:before{content:'';position:absolute;inset:10px;border:1px solid #fff3c677;border-radius:46% 46% 0 0;pointer-events:none;z-index:3}
+.soul-card:after{inset:40% 0 0;background:linear-gradient(transparent,#071c26ed)}
+.soul-card .portrait-open{top:32%;right:17px}
+.promise-toggle{border:0;border-bottom:1px solid #e7c58d60;background:none;color:#f2d9a9;padding:6px 2px 8px;font:italic 21px var(--serif);margin-top:5px}
+.promise-toggle span{font:12px var(--sans);padding-left:8px}
+.promise-note{font:italic 26px/1.1 var(--serif);color:#fff0d5;margin:18px auto 5px;padding:0 10px}
+.soul-card.promise-open img{transform:scale(1.04);filter:brightness(.73)}
+.souls-amp{font-size:100px;color:#fff7e0}
+.date-chapter{border-top:1px solid #d4ba8155}
+.scratch-frame{border-radius:2px}
+.celestial-clock{border-radius:48% 48% 0 0 / 18% 18% 0 0;padding-top:75px}
+.clock-crown{top:7px;background:none}
+/* Three acts, with an actual change of scene rather than a decorated event list. */
+.celebrations{background:radial-gradient(ellipse at 50% 12%,#273d3a,#091e28 53%,#061823);color:#f5ecdc;padding:110px 6vw 75px;isolation:isolate}
+.celebrations:before{height:80px;background:linear-gradient(#c9ad72,transparent)}
+.celebration-heading{max-width:700px;margin:auto;position:relative}
+.celebration-heading>.eyebrow{font-size:9px;color:#d2b984;letter-spacing:.3em}
+.act-ornament{display:block;margin:23px auto 18px;color:#e4c990;font-size:24px}
+.celebration-heading .display-title{font-size:clamp(70px,8.7vw,128px);line-height:.85;margin:0 auto 28px;color:#fcf3e3}
+.celebration-heading .display-title em{color:#d6b77e}
+.celebration-heading .section-description{font-size:24px;color:#c3c8b9;margin-bottom:55px}
+.celebration-theatre{max-width:1160px;margin:auto;position:relative;border:1px solid #b89a626b;padding:10px;background:#06151d;box-shadow:0 0 0 7px #bda07109,0 40px 100px #01091080;text-align:left}
+.celebration-theatre:before,.celebration-theatre:after{content:'';position:absolute;width:38px;height:38px;border-color:#e4c98b;pointer-events:none;z-index:6}
+.celebration-theatre:before{top:-4px;left:-4px;border-top:1px solid;border-left:1px solid}
+.celebration-theatre:after{bottom:-4px;right:-4px;border-bottom:1px solid;border-right:1px solid}
+.theatre-topline{display:flex;justify-content:space-between;gap:12px;padding:13px 14px 20px;color:#cbb786;font:8px var(--sans);letter-spacing:.21em}
+.celebration-stage{position:relative;isolation:isolate}
+.celebration-scene{position:relative;min-height:680px;overflow:hidden;background:#1d3339;isolation:isolate}
+.scene-picture{position:absolute;inset:0;width:100%;height:100%;z-index:-3}
+.scene-image,.scene-veil,.scene-effects{position:absolute;inset:0;width:100%;height:100%}
+.scene-image{object-fit:cover;object-position:center;z-index:-3;transform:scale(1.015);transition:transform 2s var(--world-ease),filter 1.5s;filter:saturate(.86)}
+.scene-veil{z-index:-2;background:linear-gradient(90deg,#061b25ad 0,#061b2530 65%),linear-gradient(0deg,#03151df5 0,#061c24a6 32%,#061c2410 75%)}
+.scene-ceremony .scene-veil{background:linear-gradient(90deg,#14263299,transparent),linear-gradient(0deg,#071a25f5,#102b3770 52%,#1225340a)}
+.scene-moonlight .scene-veil{background:linear-gradient(90deg,#02151fb5,transparent),linear-gradient(0deg,#031723fa,#061d2777 50%,transparent)}
+.celebration-scene:after{content:'';position:absolute;inset:15px;border:1px solid #fff0cc4a;pointer-events:none;z-index:-1}
+.scene-date{position:absolute;top:35px;right:35px;display:flex;align-items:center;flex-direction:column;color:#f7e8c9;padding:16px 13px 20px;background:#09212a8c;border:1px solid #e0c59270;border-radius:70px 70px 0 0;min-width:115px;backdrop-filter:blur(8px)}
+.scene-date span{font:7px var(--sans);letter-spacing:.17em}
+.scene-date strong{font:300 66px/.95 var(--serif);margin:8px 0 11px}
+.scene-copy{position:relative;padding:190px 6% 48px;max-width:760px;transition:transform 1s var(--world-ease),opacity .8s;min-height:680px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end}
+.scene-kicker{font:8px var(--sans);letter-spacing:.23em;color:#f0d69e;margin-bottom:19px}
+.scene-copy h3{font:300 clamp(60px,6.8vw,95px)/.87 var(--serif);letter-spacing:-.045em;margin:0 0 22px;color:#fff6e9;text-shadow:0 4px 40px #03151d80}
+.scene-copy h3 em{font-weight:300;color:#f0d39e}
+.scene-copy>p{font:italic 23px/1.35 var(--serif);color:#f1e5cf;margin:0 0 23px}
+.scene-essentials{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font:8px var(--sans);letter-spacing:.14em;color:#f9e6bf}
+.scene-essentials i{font-size:12px;font-style:normal;color:#ebca89}
+.scene-unveil{display:flex;align-items:center;gap:15px;border:0;background:none;padding:0;margin-top:26px;color:#f7e4b9;text-align:left}
+.scene-seal{width:58px;height:58px;display:grid;place-items:center;flex-shrink:0;border:1px solid #e3c48aab;border-radius:50%;font:26px var(--serif);background:radial-gradient(circle at 30% 25%,#c19a5760,#5238174d);box-shadow:0 0 0 5px #e0bd7b0e;transition:transform .6s,box-shadow .6s}
+.scene-unveil>span:nth-child(2){font:8px var(--sans);letter-spacing:.16em}
+.scene-unveil small{display:block;font:italic 21px var(--serif);letter-spacing:0;color:#efe3c8;margin-top:5px}
+.scene-unveil b{font:22px var(--serif);font-weight:300;margin-left:13px;transition:transform .6s}
+.scene-unveil:hover .scene-seal{transform:rotate(20deg);box-shadow:0 0 0 8px #e0bd7b1a,0 0 30px #ffe0a645}
+.scene-unveil:hover b{transform:translate(4px,-4px)}
+.celebration-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#0b2029;gap:1px;margin-top:10px}
+.celebration-tabs button{display:flex;align-items:center;gap:17px;background:#0a2029;border:0;border-top:1px solid #b89a6235;text-align:left;color:#b7b9a9;padding:24px 25px;position:relative;transition:color .5s,background .5s}
+.celebration-tabs button:after{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:#ebcc8b;transform:scaleX(0);transition:transform .7s var(--world-ease);transform-origin:left}
+.celebration-tabs button[aria-selected=true]{color:#f6e3bc;background:linear-gradient(130deg,#b38e4d20,#142b30)}
+.celebration-tabs button[aria-selected=true]:after{transform:scaleX(1)}
+.tab-roman{font:italic 39px var(--serif);color:#b99c6b}
+.celebration-tabs button>span:nth-child(2){font:25px var(--serif)}
+.celebration-tabs button small{display:block;color:#c9b48e;font:7px var(--sans);letter-spacing:.13em;margin-bottom:6px}
+.celebration-tabs button>b{margin-left:auto;font-size:21px;font-weight:300;opacity:.6}
+.scene-invitation{position:absolute;inset:28px 28px 28px auto;width:43%;max-width:450px;background:radial-gradient(ellipse at 50% 0,#fffcf2,#ece0cb);border:1px solid #c2a373;padding:28px 26px;color:#364239;text-align:center;box-shadow:0 20px 70px #0007;display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:95% 50%;z-index:4}
+.scene-invitation:before{content:'';position:absolute;inset:9px;border:1px solid #b99b6866;pointer-events:none}
+.invitation-flourish{font:32px var(--serif);color:#a07d46;display:block;margin:0 0 12px}
+.scene-invitation .micro{font-size:7px;letter-spacing:.18em;color:#9b7c4b;margin:0 0 15px}
+.scene-invitation h4{font:400 clamp(30px,3.6vw,49px)/.95 var(--serif);letter-spacing:-.025em;margin:0 0 18px}
+.scene-invitation>p{font:italic 19px/1.3 var(--serif);margin:0 0 13px;color:#75715f}
+.invitation-rule{width:60px;height:1px;background:#b599655c;margin:5px auto 16px}
+.scene-invitation .invitation-when{font:21px/1.3 var(--serif);color:#394d43}
+.invitation-when strong{display:block;font:9px var(--sans);letter-spacing:.05em;margin-top:9px}
+.scene-invitation .invitation-place{font:20px/1.2 var(--serif);color:#8d7450;margin:7px 0 20px}
+.close-invitation{border:0;border-bottom:1px solid #ad915d6b;background:none;color:#896b3c;padding:10px 0 6px;font:italic 18px var(--serif);position:relative;z-index:2}
+.close-invitation span{margin-left:10px}
+.celebration-scene.invitation-open .scene-image{transform:scale(1.07);filter:saturate(.9) brightness(.8)}
+.celebration-scene.invitation-open .scene-copy{transform:translateX(-12px);max-width:57%;opacity:.8}
+.celebration-scene.invitation-open .scene-copy h3{font-size:clamp(48px,5vw,70px)}
+.celebration-scene.invitation-open .scene-date{opacity:0;transition:opacity .4s}
+.celebration-scene.invitation-open .scene-unveil{visibility:hidden}
+.scene-effects{pointer-events:none;overflow:hidden;z-index:5}
+.scene-mote{position:absolute;left:var(--mote-x);top:-30px;opacity:0;animation:petalDescent var(--mote-duration) var(--mote-delay) linear both}
+.scene-ceremony .scene-mote{width:13px;height:18px;border-radius:70% 5% 60% 30%;background:linear-gradient(145deg,#fffdf0,#e6c5b4);box-shadow:inset -2px -2px 4px #ac81744d,0 0 12px #ffecd42b}
+.scene-welcome .scene-mote{top:auto;bottom:0;width:17px;height:25px;border-radius:5px 5px 8px 8px;background:radial-gradient(ellipse at 50% 85%,#fff3bc,#e8b15baa 50%,#a85f2c70);box-shadow:0 0 20px #f8be5c60;animation-name:lanternAscent}
+.scene-moonlight .scene-mote{width:3px;height:3px;border-radius:50%;background:#fff1bc;box-shadow:0 0 12px #ffe7a1;animation-name:starCrossing}
+.scene-moonlight .scene-mote:after{content:'';position:absolute;right:1px;top:0;width:70px;height:1px;background:linear-gradient(90deg,transparent,#f8e2a7);transform:rotate(-35deg);transform-origin:right}
+@keyframes petalDescent{0%{opacity:0;transform:translate(0,-10px) rotate(0)}12%{opacity:.95}85%{opacity:.85}100%{opacity:0;transform:translate(var(--mote-drift),740px) rotate(290deg)}}
+@keyframes lanternAscent{0%{opacity:0;transform:translate(0,20px) scale(.7)}15%{opacity:1}90%{opacity:.7}100%{opacity:0;transform:translate(var(--mote-drift),-700px) scale(.3)}}
+@keyframes starCrossing{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}70%{opacity:.7}100%{opacity:0;transform:translate(-350px,480px)}}
+.theatre-whisper{font:italic 24px var(--serif);color:#d3c5a7;margin:40px auto 22px}
+.celebrations .concept-note{color:#a4ad9e;font-size:9px;margin-top:20px}
+/* The music room leaves a guest-written miniature score. */
+.symphony-section{padding-top:115px;background:#061a25}
+.piano-panel{border-radius:8px 8px 0 0;max-width:960px;background:linear-gradient(135deg,#173841ee,#071b25f7)}
+.piano-panel:before{content:'';position:absolute;inset:10px;border:1px solid #e2c48a24;pointer-events:none;border-radius:4px}
+.guest-score{text-align:center;margin-top:20px}
+.guest-score>span{font:7px var(--sans);letter-spacing:.22em;color:#d3bb88}
+.guest-notes{display:flex;align-items:center;justify-content:center;gap:15px;height:52px;max-width:560px;margin:10px auto 0;position:relative;background:repeating-linear-gradient(0deg,transparent 0 9px,#e0c18a26 9px 10px);overflow:hidden}
+.score-clef{font:46px var(--serif);font-style:normal;color:#ceb17a;position:absolute;left:0;top:-3px}
+.written-note{font:21px var(--serif);color:#f7dda4;transform:translateY(var(--note-y));display:inline-block;position:relative}
+.written-note:before{content:'♪';font-size:30px}
+.guest-score p{font:italic 18px var(--serif);color:#bbc8bd;margin:14px 0 0}
+/* A private letter becomes a physical object, opened at its wax seal. */
+.letter-section{background:radial-gradient(ellipse at 50% 25%,#faf4e7,#e3d9c6);padding-top:120px;padding-bottom:130px;perspective:1400px}
+.letter-closed{position:relative;background:linear-gradient(135deg,#f8f0df,#e5d7bd);padding-top:78px;box-shadow:0 34px 70px #5f51362e;transition:box-shadow 1s,transform 1.2s;transform-style:preserve-3d}
+.letter-closed:before{inset:12px;z-index:3}
+.letter-closed:after{inset:18px;z-index:3}
+.letter-closed>*:not(.envelope-flap){position:relative;z-index:2}
+.letter-edition{font:7px var(--sans);letter-spacing:.23em;color:#a18760;display:block;margin-bottom:25px}
+.envelope-flap{position:absolute;top:0;left:0;right:0;height:230px;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(170deg,#e9dac1,#d8c5a2);transform-origin:50% 0;transition:transform 1.4s var(--world-ease),opacity .8s;z-index:1;opacity:.65}
+.letter-closed.open .envelope-flap{transform:rotateX(-175deg);opacity:0}
+.letter-closed.open{transform:translateY(-5px);box-shadow:0 45px 80px #5f513633}
+.letter-closed.open .letter-text{background:#fff9ec;padding:30px 25px;border:1px solid #d4bd9266;box-shadow:0 10px 30px #876d3812}
+/* Wishes become lights on the branches, while the original words remain readable. */
+.blessings{background:radial-gradient(ellipse at 50% 35%,#1f4e45,#0b3035 48%,#061d2a);padding-bottom:110px}
+.blessings .section-description{margin-bottom:15px}
+.wish-orchard{position:relative;width:min(100%,700px);margin:0 auto 0;aspect-ratio:700/370;isolation:isolate}
+.wish-orchard:before{content:'';position:absolute;inset:0 12% 10%;border:1px solid #d7b98120;border-bottom:0;border-radius:50% 50% 0 0;z-index:-1;background:radial-gradient(ellipse,#e8ca8e09,transparent 65%)}
+.wish-orchard svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 4px #d7b98120)}
+.orchard-trunk{stroke-width:2}
+.orchard-leaves{opacity:.65}
+.orchard-lights{position:absolute;inset:0 0 11%}
+.orchard-flower{position:absolute;left:var(--flower-x);top:var(--flower-y);width:44px;height:44px;transform:translate(-50%,-50%);border:0;border-radius:50%;background:radial-gradient(circle,#eed19730,transparent 70%);color:#f7d99e;font:28px var(--serif);text-shadow:0 0 20px #ffda89;box-shadow:0 0 25px #e9c17c20;transition:background .5s,box-shadow .5s}
+.orchard-flower:hover,.orchard-flower[aria-pressed=true]{background:#e7c78025;box-shadow:0 0 40px #e9c17c55}
+.orchard-count{position:absolute;left:0;right:0;bottom:0;font:italic 18px var(--serif);color:#c5cbb8;margin:0}
+.orchard-wish{max-width:520px;margin:20px auto 38px;min-height:125px;text-align:center}
+.orchard-wish>span{color:#e8cc92;font-size:24px}
+.orchard-wish p{font:italic 25px/1.3 var(--serif);color:#f3e5c8;margin:12px 0}
+.orchard-wish small{font:8px var(--sans);letter-spacing:.15em;color:#c8b68c}
+.blessing-form{border:1px solid #c4a87150;background:#071e252d;padding:32px}
+.blessing-garden{gap:13px;margin-top:35px}
+.blessing-bloom{border-radius:45% 45% 0 0 / 20% 20% 0 0;padding-top:38px}
+/* RSVP is a personal admission card, with an honest prepared-response state. */
+.rsvp-section{background:linear-gradient(#f8f0e3,#eae0ce);padding-bottom:125px}
+.rsvp-card{max-width:950px;padding:0;display:grid;grid-template-columns:37% 63%;background:#fdf8ed;border:1px solid #b89a66;box-shadow:0 35px 75px #6e5c3625;overflow:hidden;isolation:isolate}
+.rsvp-card:before{inset:10px;z-index:4;border-color:#c5a46a50}
+.rsvp-ring{display:none}
+.royal-pass{grid-column:1;grid-row:1/3;background:linear-gradient(#09242ce0,#09242cf5),url('assets/scenes/ceremony-small.webp') center/cover;color:#f3e1bd;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:42px 28px;border-right:1px dashed #cbae7966}
+.royal-pass:before,.royal-pass:after{content:'';position:absolute;right:-12px;width:24px;height:24px;border:1px solid #b89a66;border-radius:50%;background:#efe5d3;z-index:5}
+.royal-pass:before{top:-13px}.royal-pass:after{bottom:-13px}
+.pass-edition{font:7px var(--sans);letter-spacing:.14em;color:#c8b17e;margin-bottom:28px}
+.pass-crest{width:105px;height:105px;border:1px solid #dac18b70;border-radius:50%;display:flex;align-items:center;justify-content:center;font:32px var(--serif);box-shadow:0 0 0 7px #dac18b0c}
+.pass-crest em{font-size:14px;padding:0 5px;font-style:normal}
+.royal-pass h3{font:300 53px/.95 var(--serif);letter-spacing:-.035em;margin:30px 0 25px;color:#fff2d9}
+.royal-pass h3 em{color:#debf87;font-weight:300}
+.pass-rule{width:70px;height:1px;background:#c6a5746b;margin-bottom:22px}
+.royal-pass p{font:italic 24px/1.2 var(--serif);color:#f4dfb4;overflow-wrap:anywhere;margin:0 0 26px;max-width:100%}
+.pass-date{font:8px/2 var(--sans);letter-spacing:.15em;color:#cbb98f}
+.pass-state{font:7px/1.7 var(--sans);letter-spacing:.13em;color:#c1b089;margin-top:29px;max-width:200px;min-height:25px}
+.rsvp-card>form{grid-column:2;grid-row:1;padding:43px 44px 36px}
+.rsvp-card>.rsvp-result{grid-column:2;grid-row:2;margin:0 30px 30px;padding-top:5px;border:0}
+.rsvp-card.is-prepared .pass-crest{box-shadow:0 0 0 8px #dac18b17,0 0 45px #eccb8530;transition:box-shadow 1.2s}
+.rsvp-card.is-prepared .royal-pass{background:linear-gradient(#113b3be0,#09242cf0),url('assets/scenes/ceremony-small.webp') center/cover}
+.rsvp-card .rsvp-choices span{font-size:11px}
+.rsvp-result pre{font-size:12px}
+.rsvp-result>div .pill-button{font-size:8px;padding:15px 12px;letter-spacing:.08em;flex:1}
+.pill-button{min-height:48px;box-shadow:inset 0 1px 0 #fff0c080}
+.pill-button:after{content:'';position:absolute;inset:4px;border:1px solid currentColor;opacity:.15;pointer-events:none}
+.pill-button--outline{box-shadow:none}
+.finale-constellation{position:absolute;inset:50% auto auto 50%;width:min(94vw,750px);height:auto;transform:translate(-50%,-50%);fill:none;stroke:#e4c58c;stroke-width:1;opacity:0;pointer-events:none;transition:opacity 2s}
+.finale-constellation path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 4s var(--world-ease)}
+.finale-constellation circle{fill:#fbe8b6;stroke:none;filter:drop-shadow(0 0 10px #f4d19a)}
+.finale.wish-made .finale-constellation{opacity:.6}
+.finale.wish-made .finale-constellation path{stroke-dashoffset:0}
+.site-footer .footer-monogram{font-size:48px;color:#d8bc83}
+.footer-link{display:inline-block;margin:25px 15px 0;padding:12px 0 8px;border-bottom:1px solid #d0b17a55;font-size:8px;transition:color .3s,letter-spacing .3s}
+.footer-link:hover{color:#fff0cb;letter-spacing:.21em}
+.scene-unveil:focus-visible,.promise-toggle:focus-visible,.orchard-flower:focus-visible{outline:2px solid #ffe5ab;outline-offset:5px}
+@media(max-width:1000px){.story-section{padding:35px 3vw;min-height:800px}.story-photo{min-height:740px}.story-copy{padding:35px 4vw}.story-copy .display-title{font-size:61px}.story-copy .signed-line{font-size:29px}.celebration-tabs button{padding:20px 18px;gap:12px}.celebration-tabs button>span:nth-child(2){font-size:23px}.celebration-tabs button>b{display:none}.scene-copy{padding-left:5%}.rsvp-card>form{padding:36px 28px}.royal-pass{padding-left:20px;padding-right:20px}.royal-pass h3{font-size:45px}}
+@media(max-width:700px){
+ .hero:after{inset:11px}.prologue{min-height:760px;padding:95px 20px 65px}.destiny-orbits{width:150vw;max-height:none}.destiny-button{font-size:22px}.destiny-whisper{font-size:16px}.prologue .gold-sun{margin-top:14px}
+ .story-section{display:flex;flex-direction:column;padding:30px 18px 0}.story-photo{min-height:0;height:560px;flex-shrink:0;border-radius:48% 48% 0 0}.story-photo img{object-position:center}.story-copy{padding:45px 15px 50px;text-align:left;align-items:flex-start}.story-folio{margin-bottom:25px}.story-copy .display-title{font-size:64px;min-height:3em;margin:8px 0 12px}.story-copy .story-paragraph{min-height:6.5em;font-size:23px}.story-copy .signed-line{font-size:31px;margin-top:5px}.story-pages{margin-top:28px;gap:17px}.story-pages button span{font-size:9px;max-width:95px}.story-pages button b{font-size:25px}.portrait-interlude{padding-top:90px;padding-bottom:90px}
+ .two-souls{padding-top:85px}.soul-caption{bottom:22px}.soul-caption strong{font-size:40px}.promise-toggle{font-size:18px;margin-top:3px}.promise-note{font-size:21px;padding:0 3px}.soul-card:before{inset:6px}.soul-card .portrait-open{right:10px;top:30%}.souls-amp{font-size:65px}
+ .celebrations{padding:95px 15px 65px}.celebration-heading .display-title{font-size:83px}.celebration-heading>.eyebrow{font-size:8px;letter-spacing:.18em}.act-ornament{font-size:20px;margin:20px auto}.celebration-heading .section-description{font-size:22px;margin-bottom:38px;padding:0 12px}
+ .celebration-theatre{padding:6px}.theatre-topline{padding:12px 8px 17px;font-size:6px;letter-spacing:.13em}.celebration-scene{min-height:675px}.scene-copy{padding:210px 25px 34px;min-height:675px;max-width:none}.scene-date{top:23px;right:23px;min-width:89px;padding:15px 10px}.scene-date strong{font-size:55px;margin:7px 0}.scene-date span{font-size:6px}.scene-image{object-position:54% center}.scene-veil{background:linear-gradient(0deg,#041923fa,#061b25a6 50%,#061b2520)}
+ .scene-copy h3{font-size:67px;margin-bottom:18px}.scene-copy>p{font-size:22px;margin-bottom:20px}.scene-kicker{font-size:7px;letter-spacing:.15em;margin-bottom:17px}.scene-essentials{font-size:7px;letter-spacing:.1em;gap:11px}.scene-unveil{gap:13px;margin-top:25px}.scene-seal{width:53px;height:53px;font-size:25px}.scene-unveil>span:nth-child(2){font-size:7px;letter-spacing:.1em}.scene-unveil small{font-size:20px}.scene-unveil b{font-size:21px;margin-left:3px}
+ .celebration-tabs{gap:0;margin-top:6px}.celebration-tabs button{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:17px 5px 19px;border-right:1px solid #b89a6224;min-height:111px}.celebration-tabs button:last-child{border-right:0}.tab-roman{font-size:28px;line-height:1}.celebration-tabs button>span:nth-child(2){font-size:18px;line-height:1.1}.celebration-tabs button small{font-size:5px;letter-spacing:.06em;margin-bottom:7px;white-space:nowrap}
+ .scene-invitation{inset:20px;width:auto;max-width:none;padding:36px 22px;min-height:0}.scene-invitation h4{font-size:49px;margin-bottom:21px}.scene-invitation>p{font-size:22px}.scene-invitation .micro{font-size:7px;margin-bottom:22px}.invitation-flourish{font-size:35px;margin-bottom:17px}.scene-invitation .invitation-when{font-size:23px}.scene-invitation .invitation-place{font-size:22px}.invitation-when strong{font-size:9px}.close-invitation{font-size:21px;margin-top:8px}.celebration-scene.invitation-open .scene-copy{opacity:0;visibility:hidden;max-width:none}.theatre-whisper{font-size:20px;max-width:280px;line-height:1.3;margin-top:31px}.celebrations .concept-note{font-size:8px;max-width:300px;line-height:1.6}
+ .piano-panel{padding-top:32px}.guest-notes{gap:10px;padding-left:35px;height:47px}.guest-score p{font-size:16px}.guest-score>span{font-size:6px}.written-note:before{font-size:26px}.score-clef{font-size:41px}.symphony-section{padding-top:95px}.letter-section{padding-top:95px;padding-bottom:100px}.letter-closed{padding:55px 25px 40px}.letter-edition{font-size:6px;letter-spacing:.14em;margin-bottom:20px}.envelope-flap{height:190px}.letter-closed.open .letter-text{padding:23px 17px;font-size:22px}
+ .blessings{padding-left:20px;padding-right:20px}.blessings .section-description{font-size:21px;margin-bottom:25px}.wish-orchard{width:115%;margin-left:-7.5%}.orchard-count{font-size:16px}.orchard-wish{min-height:110px;margin:22px auto 30px}.orchard-wish p{font-size:23px}.orchard-wish small{font-size:7px}.blessing-form{padding:24px 20px}.orchard-flower{width:40px;height:40px;font-size:23px}.blessing-garden{margin-top:30px}
+ .rsvp-card{display:flex;flex-direction:column}.royal-pass{padding:27px 25px 24px;min-height:290px;border-right:0;border-bottom:1px dashed #cbae7966;display:grid;grid-template-columns:1fr 110px;gap:0 15px;text-align:left;align-items:center;justify-items:start}.royal-pass:before{top:auto;bottom:-12px;left:-13px;right:auto}.royal-pass:after{bottom:-12px}.pass-edition{grid-column:1/3;margin-bottom:22px;font-size:6px}.pass-crest{grid-column:2;grid-row:2/4;width:82px;height:82px;font-size:25px;justify-self:center}.royal-pass h3{grid-column:1;grid-row:2;font-size:42px;margin:0 0 14px}.pass-rule{display:none}.royal-pass p{grid-column:1;grid-row:3;margin:0 0 17px;font-size:20px;min-height:26px}.pass-date{grid-column:1;font-size:7px;line-height:1.8}.pass-state{grid-column:2;grid-row:4;font-size:5px;letter-spacing:.1em;text-align:center;margin:0;max-width:115px;justify-self:center}.rsvp-card>form{padding:34px 26px 32px}.rsvp-card>.rsvp-result{margin:0 25px 30px}.rsvp-card:before{inset:8px}.rsvp-section{padding-bottom:95px}.rsvp-result>div .pill-button{font-size:8px;padding:14px 9px}.finale-constellation{width:135vw;max-width:none}.footer-link{margin-left:12px;margin-right:12px;font-size:7px}
+}
+@media(max-width:360px){.scene-copy{padding-left:20px;padding-right:18px}.scene-copy h3{font-size:59px}.scene-copy>p{font-size:20px}.scene-unveil{gap:9px}.scene-unveil>span:nth-child(2){font-size:6px}.scene-unveil b{display:none}.scene-invitation{inset:17px;padding:30px 15px}.scene-invitation h4{font-size:45px}.celebration-tabs button>span:nth-child(2){font-size:16px}.story-copy .display-title{font-size:57px}.royal-pass{grid-template-columns:1fr 85px;padding-left:23px;padding-right:23px}.pass-crest{width:75px;height:75px}.royal-pass h3{font-size:38px}}
+@media(prefers-reduced-motion:reduce){
+ .destiny-orbits .destiny-heart,.finale-constellation path{transition:none}.scene-mote{display:none}.scene-image,.celebration-scene.invitation-open .scene-image{transform:none;filter:saturate(.86)}.letter-closed.open{transform:none}.portrait-card.reveal{clip-path:none;transform:none}.destiny-orbits,.finale-constellation{filter:none}.celebration-scene.invitation-open .scene-copy{transform:none}
+}

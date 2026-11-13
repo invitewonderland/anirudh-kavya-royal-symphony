@@ -1,5 +1,5 @@
 /* Non-rendering integration checks. Run: node tests/interactions.cjs
-   Uses the real HTML and both production scripts, with browser APIs stubbed.
+   Uses the real HTML and all three production scripts, with browser APIs stubbed.
    This checks behavior and DOM contracts; it does not substitute for visual QA. */
 const fs=require('node:fs');
 const path=require('node:path');
@@ -27,6 +27,7 @@ function harness({reduced=false,stored='[]',now='2027-01-24T14:29:59Z',blockedAu
     setAttribute(k,v){this.attrs[k]=String(v)} getAttribute(k){return this.attrs[k]??null} removeAttribute(k){delete this.attrs[k]}
     addEventListener(name,cb){(this.listeners[name]??=[]).push(cb)}
     fire(name,event={}){const e={target:this,currentTarget:this,preventDefault(){},...event};for(const cb of this.listeners[name]||[])cb(e)}
+    click(){this.fire('click')}
     focus(){document.activeElement=this} scrollIntoView(){} setPointerCapture(){} select(){}
     getBoundingClientRect(){return {top:100,bottom:400,left:100,right:600,width:500,height:300}}
     getContext(){return context2d}
@@ -85,7 +86,7 @@ function harness({reduced=false,stored='[]',now='2027-01-24T14:29:59Z',blockedAu
   };
   sandbox.window=sandbox;sandbox.addEventListener=(name,cb)=>(events[name]??=[]).push(cb);sandbox.scrollTo=()=>{};sandbox.open=()=>{};
   vm.createContext(sandbox);
-  for(const file of ['script.js','luxury.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),sandbox,{filename:file});
+  for(const file of ['script.js','luxury.js','royal-world.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),sandbox,{filename:file});
   const $=id=>document.getElementById(id);
   return {$,document,sandbox,timers,frames,storage,motion,events,vm:code=>vm.runInContext(code,sandbox),setDate:value=>clock=Date.parse(value),setCoverage:value=>coverage=value,
     flushDelay(delay){for(const [id,t] of [...timers])if(t.delay===delay&&!t.interval){timers.delete(id);t.cb()}},
@@ -104,6 +105,19 @@ function harness({reduced=false,stored='[]',now='2027-01-24T14:29:59Z',blockedAu
   assert.equal(h.document.querySelectorAll('.piano-key').length,25);
   assert.equal(h.document.querySelectorAll('.piano-key.white').length,15);
   assert.equal(h.document.querySelectorAll('.piano-key.black').length,10);
+  assert.equal(h.$('act-welcome').hidden,false);assert.equal(h.$('act-ceremony').hidden,true);
+  h.$('tab-ceremony').fire('click');assert.equal(h.$('act-welcome').hidden,true);assert.equal(h.$('act-ceremony').hidden,false);
+  assert.equal(h.$('tab-ceremony').getAttribute('aria-selected'),'true');assert.equal(h.$('tab-welcome').getAttribute('tabindex'),'-1');
+  const ceremonyOpener=h.$('act-ceremony').querySelector('.scene-unveil');ceremonyOpener.fire('click');
+  assert.equal(h.$('invitation-ceremony').hidden,false);assert.equal(ceremonyOpener.getAttribute('aria-expanded'),'true');
+  assert.equal(h.$('act-ceremony').querySelectorAll('.scene-mote').length,13,'mobile scene effects must stay bounded');
+  h.$('act-ceremony').fire('keydown',{key:'Escape'});assert.equal(h.$('invitation-ceremony').hidden,true);assert.equal(h.document.activeElement,ceremonyOpener);
+  h.$('tab-ceremony').fire('keydown',{key:'ArrowRight'});assert.equal(h.$('act-moonlight').hidden,false);assert.equal(h.document.activeElement,h.$('tab-moonlight'));
+  assert.equal(h.$('act-ceremony').querySelectorAll('.scene-mote').length,0,'switching acts clears the previous effect');
+  h.$('tab-moonlight').fire('keydown',{key:'ArrowRight'});assert.equal(h.$('act-welcome').hidden,false);
+  h.document.querySelector('[data-story="1"]').fire('click');assert.equal(h.$('storyPageNumber').textContent,'02 / 03');assert.match(h.document.querySelector('.story-photo img').src,/04-aegean/);
+  h.$('joinStars').fire('click');assert.equal(h.$('prologue').classList.contains('stars-joined'),true);
+  const promise=h.document.querySelector('.promise-toggle');promise.fire('click');assert.equal(h.$('bridePromise').hidden,false);promise.fire('click');assert.equal(h.$('bridePromise').hidden,true);
   h.setDate('2027-01-23T12:28:57Z');h.vm('updateCountdown()');
   assert.deepEqual(['cdDays','cdHours','cdMinutes','cdSeconds'].map(id=>h.$(id).textContent),['01','02','01','03']);
   h.setDate('2028-01-24T14:30:01Z');h.vm('updateCountdown()');
@@ -127,7 +141,11 @@ function harness({reduced=false,stored='[]',now='2027-01-24T14:29:59Z',blockedAu
   h.$('blessingName').value='<img onerror=alert(1)>';h.$('blessingMessage').value='A beautiful forever';h.$('blessingForm').fire('submit');
   assert.equal(h.$('blessingGarden').querySelectorAll('img').length,0);assert.match(h.$('blessingGarden').textContent,/WITH LOVE, <IMG ONERROR/);
   assert.equal(JSON.parse(h.storage.get('anirudh-kavya-demo-blessings-v1')).length,1);
+  assert.equal(h.$('orchardLights').children.length,1);h.$('orchardLights').children[0].fire('click');assert.match(h.$('orchardWish').textContent,/A beautiful forever/);assert.equal(h.$('orchardWish').querySelectorAll('img').length,0);
   h.$('guestName').value='Test Guest';h.$('guestCount').value='2';h.$('rsvpForm').fire('submit');assert.equal(h.$('rsvpResult').hidden,false);assert.match(h.$('rsvpText').textContent,/Guests: 2/);
+  assert.equal(h.$('ticketGuestName').textContent,'Test Guest');assert.match(h.$('ticketState').textContent,/PREPARED/);
+  h.$('guestName').value='A Different Guest';h.$('rsvpForm').fire('input');assert.equal(h.$('rsvpResult').hidden,true,'editing a response must invalidate the old prepared message');assert.equal(h.$('ticketGuestName').textContent,'A Different Guest');
+  for(let i=0;i<18;i++)h.sandbox.RoyalWorld.resonate(60+i);assert.equal(h.$('guestNotes').querySelectorAll('.written-note').length,12);
   h.flushFrame();h.setCoverage(.2);h.vm('checkScratchProgress()');assert.equal(h.$('scratchSurface').classList.contains('revealed'),false);
   h.setCoverage(.6);h.vm('checkScratchProgress()');assert.equal(h.$('scratchSurface').classList.contains('revealed'),true);assert.match(h.$('dateAnnouncement').textContent,/24 January 2027/);
   assert.equal(h.$('revealDateBtn').disabled,true);
@@ -136,11 +154,18 @@ function harness({reduced=false,stored='[]',now='2027-01-24T14:29:59Z',blockedAu
   reduced.$('enterButton').fire('click');reduced.flushDelay(60);await new Promise(setImmediate);
   assert.equal(reduced.document.querySelector('main').inert,false);
   reduced.$('revealDateBtn').fire('click');assert.equal(reduced.$('scratchSurface').classList.contains('revealed'),true);
+  reduced.$('act-welcome').querySelector('.scene-unveil').fire('click');assert.equal(reduced.$('invitation-welcome').hidden,false);assert.equal(reduced.$('act-welcome').querySelectorAll('.scene-mote').length,0);
   reduced.flushFrame();assert.equal(reduced.frames.size,0,'reduced motion must not schedule an atmosphere loop');
   const music=harness({blockedAudio:false});
   music.$('enterButton').fire('click');await new Promise(setImmediate);music.flushDelay(2500);
   assert.equal(music.vm('musicEnabled'),true);
   music.$('replayCurtain').fire('click');assert.equal(music.$('themeAudio').pauseCalls,1);assert.equal(music.vm('musicEnabled'),false);
   music.$('enterButton').fire('click');await new Promise(setImmediate);assert.equal(music.$('themeAudio').playCalls,2);
-  console.log('PASS: new looping soundtrack, curtain-triggered playback, removed music controls, blocked-audio retry, replay, countdown boundaries, 25 piano keys, menu focus, portraits, letter, blessings, RSVP, scratch, wishes, reduced motion.');
+  const tour=harness({reduced:true});tour.$('enterButton').click();tour.flushDelay(60);await new Promise(setImmediate);
+  tour.$('tourButton').click();tour.flushDelay(21000);assert.equal(tour.$('invitation-welcome').hidden,false);
+  tour.flushDelay(25300);assert.equal(tour.$('invitation-ceremony').hidden,false);assert.equal(tour.$('act-welcome').hidden,true);
+  tour.flushDelay(29500);assert.equal(tour.$('invitation-moonlight').hidden,false);
+  tour.$('tourButton').click();assert.equal(tour.$('tourButton').textContent,'CINEMATIC TOUR ▶');
+  assert.equal([...tour.timers.values()].some(timer=>timer.delay===56500),false,'stopping the tour clears its remaining stages');
+  console.log('PASS: soundtrack/curtains, countdown, piano, menu/gallery focus, letter, scratch, wish cooldown, reduced motion, celebration act navigation, invitations/Escape, bounded scene effects, story pages, portrait promises, wish-tree selection, musical score cap, RSVP personalisation and stale-response invalidation.');
 })().catch(error=>{console.error(error);process.exitCode=1});

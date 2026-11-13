@@ -18,8 +18,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="luxury.css">
+  <link rel="stylesheet" href="styles.css?v=royal-world-2">
+  <link rel="stylesheet" href="luxury.css?v=royal-world-2">
+  <link rel="stylesheet" href="royal-world.css?v=royal-world-2">
   <link rel="preload" as="image" href="assets/images/02-royal-romance.webp">
 </head>
 <body class="locked">
@@ -82,22 +83,27 @@
     </section>
 
     <section id="prologue" class="prologue section section-pad">
+      <svg class="destiny-orbits" viewBox="0 0 800 650" aria-hidden="true"><ellipse cx="400" cy="325" rx="350" ry="235" transform="rotate(-22 400 325)"/><ellipse cx="400" cy="325" rx="350" ry="235" transform="rotate(22 400 325)"/><path class="destiny-heart" pathLength="1" d="M400 510C330 465 145 350 205 240C248 160 352 170 400 252C448 170 552 160 595 240C655 350 470 465 400 510Z"/><circle cx="205" cy="240" r="5"/><circle cx="595" cy="240" r="5"/></svg>
       <div class="star-drift" aria-hidden="true">✧</div>
       <p class="eyebrow reveal">THE PROLOGUE</p>
       <div class="ornament reveal">❧ <span>✧</span> ❧</div>
       <h2 class="editorial-quote reveal">“Not every love story<br>begins with a <em>once upon a time.</em><br>Some begin with a <em>melody.</em>”</h2>
       <p class="body-line reveal">Across oceans, beneath unfamiliar skies, two souls found their favourite place in the world: <em>beside each other.</em></p>
       <div class="gold-sun" aria-hidden="true">✺</div>
+      <button class="destiny-button" id="joinStars" type="button" aria-pressed="false">Bring our stars together <span>✧</span></button>
+      <p class="destiny-whisper" id="destinyWhisper" aria-live="polite">Two little lights. An entire universe waiting.</p>
     </section>
 
     <section id="our-story" class="story-section section">
       <div class="story-photo photo-parallax"><img loading="lazy" src="assets/images/01-grand-arrival.webp" alt="The couple walking hand in hand down the white stone steps of Santorini"></div>
       <div class="story-copy">
+        <span class="story-folio" aria-hidden="true">THE BOOK OF US <b id="storyPageNumber">01 / 03</b></span>
         <p class="eyebrow reveal">CHAPTER I <span class="dot">✦</span> THE BEGINNING</p>
         <h2 class="display-title reveal">And suddenly,<br><em>everything</em><br>felt like music.</h2>
         <div class="small-rule reveal"></div>
         <p class="story-paragraph reveal">There are places that take your breath away. And there are people who make you forget to breathe. Somewhere between golden sunsets and stolen glances, we found both.</p>
         <span class="signed-line reveal">the beginning of our forever <span>♡</span></span>
+        <div class="story-pages" role="group" aria-label="Explore our story"><button type="button" data-story="0" aria-pressed="true"><b>01</b><span>The first note</span></button><button type="button" data-story="1" aria-pressed="false"><b>02</b><span>The golden hours</span></button><button type="button" data-story="2" aria-pressed="false"><b>03</b><span>A quiet promise</span></button></div>
       </div>
     </section>
 
@@ -114,9 +120,9 @@
     <section class="two-souls section">
       <div class="two-souls-heading reveal"><p class="eyebrow">TWO SOULS · ONE DESTINY</p><h2 class="display-title">Written <em>together.</em></h2></div>
       <div class="souls-images">
-        <div class="soul-card soul-card-bride reveal"><img loading="lazy" src="assets/images/05-royal-bride.webp" alt="Kavya in an intricately embroidered blush and champagne bridal lehenga"><div class="soul-caption"><span>THE BRIDE</span><strong>Kavya</strong></div></div>
+        <div class="soul-card soul-card-bride reveal"><img loading="lazy" src="assets/images/05-royal-bride.webp" alt="Kavya in an intricately embroidered blush and champagne bridal lehenga"><div class="soul-caption"><span>THE BRIDE</span><strong>Kavya</strong><button class="promise-toggle" type="button" aria-expanded="false" aria-controls="bridePromise">Her promise <span>↗</span></button><p class="promise-note" id="bridePromise" hidden>“In every lifetime,<br>I would find you.”</p></div></div>
         <div class="souls-amp" aria-hidden="true">&</div>
-        <div class="soul-card soul-card-groom reveal"><img loading="lazy" src="assets/images/06-royal-groom.webp" alt="Anirudh in an elegant ivory and champagne embroidered sherwani"><div class="soul-caption"><span>THE GROOM</span><strong>Anirudh</strong></div></div>
+        <div class="soul-card soul-card-groom reveal"><img loading="lazy" src="assets/images/06-royal-groom.webp" alt="Anirudh in an elegant ivory and champagne embroidered sherwani"><div class="soul-caption"><span>THE GROOM</span><strong>Anirudh</strong><button class="promise-toggle" type="button" aria-expanded="false" aria-controls="groomPromise">His promise <span>↗</span></button><p class="promise-note" id="groomPromise" hidden>“In every tomorrow,<br>I would choose you.”</p></div></div>
       </div>
       <p class="souls-verse reveal">Different notes. The same song. <span>✧</span> The most beautiful harmony.</p>
     </section>
@@ -161,16 +167,26 @@
     </section>
 
     <section id="celebrations" class="celebrations section section-pad">
-      <p class="eyebrow reveal">CHAPTER III · THE CELEBRATIONS</p>
-      <h2 class="display-title display-title--dark reveal">The days of <em>our dreams.</em></h2>
-      <p class="section-description reveal">Under the Grecian sky, every moment becomes a celebration. Your presence would make our story even more beautiful.</p>
-      <div class="event-list">
-        <article class="event-card reveal"><div class="event-number">01</div><div class="event-date">FRIDAY <span>22</span> JAN 2027</div><div class="event-info"><span class="event-kicker">THE FIRST NOTE</span><h3>A Welcome Under the Stars</h3><p>Where old friendships reunite and new memories begin.</p><div class="event-extra"><span>6:30 PM · Sunset soirée</span><span>Aegean Terrace, Santorini</span></div></div><div class="event-symbol">✧</div></article>
-        <article class="event-card event-card--featured reveal"><div class="event-number">02</div><div class="event-date">SUNDAY <span>24</span> JAN 2027</div><div class="event-info"><span class="event-kicker">THE HEART OF THE SYMPHONY</span><h3>The Royal Wedding</h3><p>Two hearts, one promise, and all the love in the world.</p><div class="event-extra"><span>4:30 PM · Wedding ceremony</span><span>Clifftop Gardens, Santorini</span></div></div><div class="event-symbol">❦</div></article>
-        <article class="event-card reveal"><div class="event-number">03</div><div class="event-date">SUNDAY <span>24</span> JAN 2027</div><div class="event-info"><span class="event-kicker">THE CELEBRATION CONTINUES</span><h3>A Moonlit Symphony</h3><p>An evening of laughter, candlelight, music and dancing.</p><div class="event-extra"><span>7:30 PM · Dinner & dancing</span><span>The Grand Courtyard, Santorini</span></div></div><div class="event-symbol">♫</div></article>
-      </div>
-      <p class="concept-note">Ceremony dates, times and venues are fictional demonstration details.</p>
-    </section>
+<div class="celebration-heading"><p class="eyebrow eyebrow--light reveal">CHAPTER III · THE CELEBRATIONS</p><span class="act-ornament reveal" aria-hidden="true">✦</span><h2 class="display-title reveal">Three acts.<br><em>One forever.</em></h2><p class="section-description section-description--light reveal">Not simply days on a calendar.<br>Entire worlds, waiting to become our memories.</p></div>
+<div class="celebration-theatre reveal" id="celebrationTheatre"><div class="theatre-topline"><span>THE ROYAL CELEBRATIONS</span><span id="theatreActNumber">ACT I / III</span></div><div class="celebration-stage" id="celebrationStage"><article class="celebration-scene scene-welcome" id="act-welcome" role="tabpanel" aria-labelledby="tab-welcome">
+<picture class="scene-picture"><source media="(max-width: 700px)" srcset="assets/scenes/welcome-small.webp"><img class="scene-image" src="assets/scenes/welcome.webp" srcset="assets/scenes/welcome-small.webp 900w, assets/scenes/welcome.webp 1659w" sizes="(max-width: 700px) 100vw, 1100px" alt="A candlelit Santorini terrace filled with roses and lanterns at sunset" loading="lazy" width="1659" height="948"></picture>
+<div class="scene-veil" aria-hidden="true"></div><div class="scene-effects" aria-hidden="true"></div>
+<div class="scene-date"><span>FRIDAY</span><strong>22</strong><span>JANUARY 2027</span></div>
+<div class="scene-copy"><span class="scene-kicker">ACT I · THE FIRST NOTE</span><h3>A welcome<br><em>under the stars.</em></h3><p>As the sun slips into the sea,<br>let the first beautiful memories begin.</p><div class="scene-essentials"><span>6:30 PM</span><i>✧</i><span>AEGEAN TERRACE</span></div><button class="scene-unveil" type="button" aria-expanded="false" aria-controls="invitation-welcome"><span class="scene-seal" aria-hidden="true">✧</span><span>LIGHT THE LANTERNS<small>open your invitation</small></span><b aria-hidden="true">↗</b></button></div>
+<div class="scene-invitation" id="invitation-welcome" hidden><span class="invitation-flourish" aria-hidden="true">✧</span><p class="micro">YOU ARE WARMLY INVITED</p><h4>A Welcome<br>Under the Stars</h4><p>Where old friendships reunite<br>and new memories begin.</p><div class="invitation-rule"></div><p class="invitation-when">Friday, 22 January 2027<br><strong>6:30 PM · Sunset soirée</strong></p><p class="invitation-place">Aegean Terrace<br>Santorini, Greece</p><button type="button" class="close-invitation">Return to the sunset <span>↙</span></button></div>
+</article><article class="celebration-scene scene-ceremony" id="act-ceremony" role="tabpanel" aria-labelledby="tab-ceremony" hidden>
+<picture class="scene-picture"><source media="(max-width: 700px)" srcset="assets/scenes/ceremony-small.webp"><img class="scene-image" src="assets/scenes/ceremony.webp" srcset="assets/scenes/ceremony-small.webp 900w, assets/scenes/ceremony.webp 1659w" sizes="(max-width: 700px) 100vw, 1100px" alt="An aisle of white roses and candlelight beneath Grecian arches overlooking the Aegean" loading="lazy" width="1659" height="948"></picture>
+<div class="scene-veil" aria-hidden="true"></div><div class="scene-effects" aria-hidden="true"></div>
+<div class="scene-date"><span>SUNDAY</span><strong>24</strong><span>JANUARY 2027</span></div>
+<div class="scene-copy"><span class="scene-kicker">ACT II · THE HEART OF THE SYMPHONY</span><h3>The royal<br><em>wedding.</em></h3><p>Between the sky and the sea,<br>two hearts make one timeless promise.</p><div class="scene-essentials"><span>4:30 PM</span><i>✧</i><span>CLIFFTOP GARDENS</span></div><button class="scene-unveil" type="button" aria-expanded="false" aria-controls="invitation-ceremony"><span class="scene-seal" aria-hidden="true">❦</span><span>LET THE PETALS FALL<small>open your invitation</small></span><b aria-hidden="true">↗</b></button></div>
+<div class="scene-invitation" id="invitation-ceremony" hidden><span class="invitation-flourish" aria-hidden="true">❦</span><p class="micro">WITNESS OUR FOREVER</p><h4>The Royal<br>Wedding</h4><p>Two hearts, one promise,<br>and all the love in the world.</p><div class="invitation-rule"></div><p class="invitation-when">Sunday, 24 January 2027<br><strong>4:30 PM · Wedding ceremony</strong></p><p class="invitation-place">Clifftop Gardens<br>Santorini, Greece</p><button type="button" class="close-invitation">Return to the roses <span>↙</span></button></div>
+</article><article class="celebration-scene scene-moonlight" id="act-moonlight" role="tabpanel" aria-labelledby="tab-moonlight" hidden>
+<picture class="scene-picture"><source media="(max-width: 700px)" srcset="assets/scenes/moonlight-small.webp"><img class="scene-image" src="assets/scenes/moonlight.webp" srcset="assets/scenes/moonlight-small.webp 900w, assets/scenes/moonlight.webp 1659w" sizes="(max-width: 700px) 100vw, 1100px" alt="A moonlit Grecian courtyard with crystal chandeliers and a mirrored dance floor" loading="lazy" width="1659" height="948"></picture>
+<div class="scene-veil" aria-hidden="true"></div><div class="scene-effects" aria-hidden="true"></div>
+<div class="scene-date"><span>SUNDAY</span><strong>24</strong><span>JANUARY 2027</span></div>
+<div class="scene-copy"><span class="scene-kicker">ACT III · UNTIL THE STARS FADE</span><h3>A moonlit<br><em>symphony.</em></h3><p>A thousand lights above us.<br>A whole lifetime of joy ahead.</p><div class="scene-essentials"><span>7:30 PM</span><i>✧</i><span>THE GRAND COURTYARD</span></div><button class="scene-unveil" type="button" aria-expanded="false" aria-controls="invitation-moonlight"><span class="scene-seal" aria-hidden="true">♫</span><span>ILLUMINATE THE NIGHT<small>open your invitation</small></span><b aria-hidden="true">↗</b></button></div>
+<div class="scene-invitation" id="invitation-moonlight" hidden><span class="invitation-flourish" aria-hidden="true">♫</span><p class="micro">LET THE NIGHT BELONG TO LOVE</p><h4>A Moonlit<br>Symphony</h4><p>An evening of laughter, candlelight,<br>music and dancing.</p><div class="invitation-rule"></div><p class="invitation-when">Sunday, 24 January 2027<br><strong>7:30 PM · Dinner & dancing</strong></p><p class="invitation-place">The Grand Courtyard<br>Santorini, Greece</p><button type="button" class="close-invitation">Return to the stars <span>↙</span></button></div>
+</article></div><div class="celebration-tabs" role="tablist" aria-label="Choose a celebration"><button id="tab-welcome" type="button" role="tab" aria-selected="true" aria-controls="act-welcome" tabindex="0"><span class="tab-roman">I</span><span><small>22 JAN · 6:30 PM</small>The welcome</span><b aria-hidden="true">✧</b></button><button id="tab-ceremony" type="button" role="tab" aria-selected="false" aria-controls="act-ceremony" tabindex="-1"><span class="tab-roman">II</span><span><small>24 JAN · 4:30 PM</small>The wedding</span><b aria-hidden="true">❦</b></button><button id="tab-moonlight" type="button" role="tab" aria-selected="false" aria-controls="act-moonlight" tabindex="-1"><span class="tab-roman">III</span><span><small>24 JAN · 7:30 PM</small>The moonlight</span><b aria-hidden="true">♫</b></button></div></div><p class="theatre-whisper reveal">Three worlds to wander into. A lifetime to remember them.</p><p class="concept-note">Ceremony dates, times and venues are fictional demonstration details.</p></section>
 
     <section id="symphony" class="symphony-section section">
       <div class="symphony-photo"><img loading="lazy" src="assets/images/07-symphony-of-us.webp" alt="Anirudh and Kavya dancing under golden lantern light on a Santorini terrace"></div>
@@ -182,14 +198,16 @@
         <div class="piano-volume"><label for="pianoVolume">PIANO VOLUME <span id="pianoVolumeValue">90%</span></label><input type="range" id="pianoVolume" min="0" max="100" value="90" aria-label="Piano volume"></div>
         <div class="piano-outer"><div class="piano-keyboard" id="pianoKeyboard" aria-label="Playable two octave piano"></div></div>
         <div class="piano-resonance" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="guest-score"><span>YOUR LITTLE SYMPHONY</span><div id="guestNotes" class="guest-notes" aria-hidden="true"><i class="score-clef">𝄞</i></div><p>Every note you play becomes a little part of our story.</p></div>
         <div class="piano-actions"><button id="playMotif" type="button" class="pill-button pill-button--outline">♫ &nbsp; PLAY THEIR MELODY</button><span>Use A S D F G H J K for white keys</span></div>
         <div class="piano-footnote">Best enjoyed with your device volume turned up. Music begins when you interact.</div>
       </div>
     </section>
 
-    <section class="letter-section section section-pad">
+    <section id="letter" class="letter-section section section-pad">
       <p class="eyebrow reveal">WORDS FROM OUR HEARTS</p><h2 class="display-title display-title--dark reveal">A letter, <em>just for you.</em></h2>
       <div class="letter-closed reveal" id="letterCard">
+        <div class="envelope-flap" aria-hidden="true"></div><span class="letter-edition" aria-hidden="true">A PRIVATE CORRESPONDENCE · A & K</span>
         <div class="letter-flourish">❦</div><p class="letter-calligraphy">To the people who make our world beautiful...</p>
         <button id="letterSeal" class="wax-seal" type="button" aria-expanded="false" aria-controls="letterText"><span>A</span><small>&</small><span>K</span></button>
         <p class="letter-tap">TAP THE GOLDEN SEAL TO OPEN OUR LETTER</p>
@@ -207,8 +225,9 @@
       <p class="eyebrow eyebrow--light reveal">CHAPTER V · THE BLESSING GARDEN</p>
       <h2 class="display-title reveal">Plant a wish.<br><em>Watch love bloom.</em></h2>
       <p class="section-description section-description--light reveal">Every kind word becomes a little light in our universe. Leave us a blessing, a memory, or just a few words from your heart.</p>
+      <div class="wish-orchard reveal" id="wishOrchard"><svg viewBox="0 0 700 330" aria-hidden="true"><defs><linearGradient id="branchGold" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#8d693a"/><stop offset="1" stop-color="#f3dca5"/></linearGradient></defs><g fill="none" stroke="url(#branchGold)" stroke-linecap="round"><path class="orchard-trunk" d="M350 315C345 245 370 190 350 80M351 218C300 208 271 163 245 110M352 187C405 170 425 130 449 70M351 259C286 250 218 230 180 180M350 240C420 238 468 214 510 155M350 140C318 120 307 88 301 55"/><path d="M245 110 214 92M245 110 257 72M449 70 485 46M449 70 436 36M180 180 152 170M180 180 182 145M510 155 548 145M510 155 509 121M301 55 279 35"/></g><g class="orchard-leaves" fill="#d9ba7a"><ellipse cx="213" cy="93" rx="6" ry="14" transform="rotate(-50 213 93)"/><ellipse cx="257" cy="73" rx="6" ry="14" transform="rotate(20 257 73)"/><ellipse cx="485" cy="46" rx="6" ry="14" transform="rotate(55 485 46)"/><ellipse cx="436" cy="36" rx="6" ry="14" transform="rotate(-20 436 36)"/><ellipse cx="152" cy="170" rx="6" ry="14" transform="rotate(-60 152 170)"/><ellipse cx="548" cy="145" rx="6" ry="14" transform="rotate(50 548 145)"/><ellipse cx="279" cy="35" rx="6" ry="14" transform="rotate(-35 279 35)"/></g></svg><div class="orchard-lights" id="orchardLights"></div><p class="orchard-count" id="orchardCount">Be the first light in our garden.</p></div><div class="orchard-wish" id="orchardWish" role="status"><span aria-hidden="true">✧</span><p>A kind word can become something that lasts forever.</p><small>YOUR WISH WILL BLOOM HERE</small></div>
       <form id="blessingForm" class="blessing-form reveal"><label for="blessingName">YOUR NAME</label><input id="blessingName" name="name" type="text" maxlength="40" placeholder="Your lovely name" required><label for="blessingMessage">A WISH FROM YOUR HEART</label><textarea id="blessingMessage" name="message" rows="3" maxlength="280" placeholder="May your love always..." required></textarea><button type="submit" class="pill-button">✦ &nbsp; PLANT YOUR BLESSING</button></form>
-      <div id="blessingGarden" class="blessing-garden" aria-live="polite"></div>
+      <div id="blessingGarden" class="blessing-garden" aria-live="off"></div>
       <p class="local-note">Demo blessing garden · messages are saved in this browser only.</p>
     </section>
 
@@ -216,14 +235,14 @@
       <p class="eyebrow reveal">THE JOY OF TOGETHERNESS</p>
       <h2 class="display-title display-title--dark reveal">Will you join <em>our song?</em></h2>
       <p class="section-description reveal">The most beautiful part of any celebration is the people who share it. We would love to celebrate with you.</p>
-      <div class="rsvp-card reveal"><div class="rsvp-ring" aria-hidden="true">✧</div><form id="rsvpForm"><label for="guestName">YOUR NAME</label><input id="guestName" required maxlength="60" placeholder="Your name" autocomplete="name"><label for="guestCount">NUMBER OF GUESTS</label><select id="guestCount"><option value="1">Just me</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option></select><label>YOUR RESPONSE</label><div class="rsvp-choices"><label><input type="radio" name="attendance" value="Joyfully accepts" checked><span>Joyfully accepts</span></label><label><input type="radio" name="attendance" value="Regretfully declines"><span>Sends love instead</span></label></div><button type="submit" class="pill-button">PREPARE MY RSVP <span>↗</span></button></form><div id="rsvpResult" class="rsvp-result" hidden><p>Your reply is ready to share:</p><pre id="rsvpText"></pre><div><button type="button" id="copyRsvp" class="pill-button pill-button--outline">COPY RESPONSE</button><button type="button" id="shareRsvp" class="pill-button">SHARE ON WHATSAPP</button></div><small>Demo invitation · no RSVP is sent automatically.</small></div></div>
+      <div class="rsvp-card reveal"><aside class="royal-pass"><span class="pass-edition">THE AEGEAN EDITION · 2027</span><div class="pass-crest" aria-hidden="true">A <em>✧</em> K</div><h3>A seat in<br>our <em>forever.</em></h3><span class="pass-rule"></span><p id="ticketGuestName">Reserved for someone<br>very dear to us.</p><span class="pass-date">24 JANUARY 2027<br>SANTORINI, GREECE</span><span class="pass-state" id="ticketState">YOUR PRESENCE IS OUR GREATEST GIFT</span></aside><div class="rsvp-ring" aria-hidden="true">✧</div><form id="rsvpForm"><label for="guestName">YOUR NAME</label><input id="guestName" required maxlength="60" placeholder="Your name" autocomplete="name"><label for="guestCount">NUMBER OF GUESTS</label><select id="guestCount"><option value="1">Just me</option><option value="2">2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option><option value="5">5 guests</option><option value="6">6 guests</option></select><label>YOUR RESPONSE</label><div class="rsvp-choices"><label><input type="radio" name="attendance" value="Joyfully accepts" checked><span>Joyfully accepts</span></label><label><input type="radio" name="attendance" value="Regretfully declines"><span>Sends love instead</span></label></div><button type="submit" class="pill-button">PREPARE MY RSVP <span>↗</span></button></form><div id="rsvpResult" class="rsvp-result" hidden><p>Your reply is ready to share:</p><pre id="rsvpText"></pre><div><button type="button" id="copyRsvp" class="pill-button pill-button--outline">COPY RESPONSE</button><button type="button" id="shareRsvp" class="pill-button">SHARE ON WHATSAPP</button></div><small>Demo invitation · no RSVP is sent automatically.</small></div></div>
     </section>
 
     <section id="forever" class="finale section">
       <div class="finale-photo"><img loading="lazy" src="assets/images/08-into-forever.webp" alt="Anirudh and Kavya looking toward the golden Aegean horizon together"></div>
       <div class="finale-shade"></div>
       <div class="finale-stars" id="wishParticles" aria-hidden="true"></div>
-      <div class="finale-content"><p class="eyebrow eyebrow--light reveal">THE FINALE · OR PERHAPS THE BEGINNING</p><div class="finale-monogram reveal">A <span>✧</span> K</div><h2 class="finale-title reveal">And so, our<br><em>forever begins.</em></h2><p class="finale-message reveal">One love. A thousand tomorrows.<br>An endless symphony of us.</p><button id="makeWish" class="wish-button reveal" type="button">✦ &nbsp; RELEASE A WISH INTO THE STARS</button><p id="wishMessage" class="wish-message" aria-live="polite"></p><p class="finale-signature reveal">With love, <span>Anirudh & Kavya</span></p></div>
+      <svg class="finale-constellation" viewBox="0 0 700 700" aria-hidden="true"><path pathLength="1" d="M350 560C280 500 90 360 160 235C207 152 306 178 350 255C394 178 493 152 540 235C610 360 420 500 350 560Z"/><circle cx="160" cy="235" r="5"/><circle cx="540" cy="235" r="5"/><circle cx="350" cy="560" r="6"/></svg><div class="finale-content"><p class="eyebrow eyebrow--light reveal">THE FINALE · OR PERHAPS THE BEGINNING</p><div class="finale-monogram reveal">A <span>✧</span> K</div><h2 class="finale-title reveal">And so, our<br><em>forever begins.</em></h2><p class="finale-message reveal">One love. A thousand tomorrows.<br>An endless symphony of us.</p><button id="makeWish" class="wish-button reveal" type="button">✦ &nbsp; RELEASE A WISH INTO THE STARS</button><p id="wishMessage" class="wish-message" aria-live="polite"></p><p class="finale-signature reveal">With love, <span>Anirudh & Kavya</span></p></div>
     </section>
   </main>
 
@@ -231,7 +250,8 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <nav class="chapter-rail" aria-label="Quick chapter navigation"><a href="#home" aria-label="The unveiling" data-title="The unveiling"></a><a href="#our-story" aria-label="Our story" data-title="Our story"></a><a href="#the-date" aria-label="The celestial date" data-title="The celestial date"></a><a href="#celebrations" aria-label="The celebrations" data-title="The celebrations"></a><a href="#symphony" aria-label="Our symphony" data-title="Our symphony"></a><a href="#blessings" aria-label="The blessing garden" data-title="The blessing garden"></a><a href="#rsvp" aria-label="Your RSVP" data-title="Your RSVP"></a><a href="#forever" aria-label="Into forever" data-title="Into forever"></a></nav>
   <dialog class="portrait-viewer" id="portraitViewer" aria-labelledby="portraitViewerTitle"><button class="viewer-close" type="button" aria-label="Close portrait">✕</button><p class="eyebrow" id="portraitViewerTitle">THE ART OF US</p><div class="viewer-stage"><img id="viewerImage" alt=""></div><div class="viewer-controls"><button id="previousPortrait" type="button" aria-label="Previous portrait">←</button><p id="viewerCaption" aria-live="polite"></p><button id="nextPortrait" type="button" aria-label="Next portrait">→</button></div></dialog>
-  <script defer src="script.js"></script>
-  <script defer src="luxury.js"></script>
+  <script defer src="script.js?v=royal-world-2"></script>
+  <script defer src="luxury.js?v=royal-world-2"></script>
+  <script defer src="royal-world.js?v=royal-world-2"></script>
 </body>
 </html>
