@@ -211,6 +211,12 @@ html{scrollbar-color:#af8b55 #0a2630}
 .finale.wish-made .finale-constellation{opacity:.6}
 .finale.wish-made .finale-constellation path{stroke-dashoffset:0}
 .site-footer .footer-monogram{font-size:48px;color:#d8bc83}
+.footer-credit{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:7px 10px;margin:34px 0 0;padding:0 12px}
+.footer-credit>span{font:italic 19px var(--serif);color:#b5baa9}
+.footer-credit>a{font:500 10px var(--sans);letter-spacing:.13em;color:#e7c78e;text-decoration:underline;text-decoration-color:#d3b17455;text-underline-offset:6px;line-height:2;transition:color .3s,text-decoration-color .3s}
+.footer-credit>a>span{display:inline-block;font-size:12px;margin-left:3px;transition:transform .3s}
+.footer-credit>a:hover{color:#fff0c9;text-decoration-color:#f2d39c}
+.footer-credit>a:hover>span{transform:translate(2px,-2px)}
 .footer-link{display:inline-block;margin:25px 15px 0;padding:12px 0 8px;border-bottom:1px solid #d0b17a55;font-size:8px;transition:color .3s,letter-spacing .3s}
 .footer-link:hover{color:#fff0cb;letter-spacing:.21em}
 .scene-unveil:focus-visible,.promise-toggle:focus-visible,.orchard-flower:focus-visible{outline:2px solid #ffe5ab;outline-offset:5px}
