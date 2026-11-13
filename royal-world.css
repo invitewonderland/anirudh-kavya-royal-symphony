@@ -59,6 +59,7 @@ html{scrollbar-color:#af8b55 #0a2630}
 .souls-amp{font-size:100px;color:#fff7e0}
 .date-chapter{border-top:1px solid #d4ba8155}
 .scratch-frame{border-radius:2px}
+.scratch-month{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
 .celestial-clock{border-radius:48% 48% 0 0 / 18% 18% 0 0;padding-top:75px}
 .clock-crown{top:7px;background:none}
 /* Three acts, with an actual change of scene rather than a decorated event list. */
